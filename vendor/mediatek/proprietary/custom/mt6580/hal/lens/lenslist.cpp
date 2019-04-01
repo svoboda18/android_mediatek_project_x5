@@ -49,9 +49,7 @@ extern PFUNC_GETLENSDEFAULT pFM50AF_getDefaultData;
 extern PFUNC_GETLENSDEFAULT pAD5820AF_getDefaultData;
 #endif
 
-#if defined(DW9714AF)
 extern PFUNC_GETLENSDEFAULT pDW9714AF_getDefaultData;
-#endif
 #if defined(DW9718AF)
 extern PFUNC_GETLENSDEFAULT pDW9718AF_getDefaultData;
 #endif
@@ -81,18 +79,9 @@ extern PFUNC_GETLENSDEFAULT pGAF008AF_getDefaultData;
 MSDK_LENS_INIT_FUNCTION_STRUCT LensList_main[MAX_NUM_OF_SUPPORT_LENS] =
 {
     {DUMMY_SENSOR_ID, DUMMY_LENS_ID, "Dummy", pDummy_getDefaultData},
-    #if defined(SENSORDRIVE)
-        //{OV3640_SENSOR_ID, SENSOR_DRIVE_LENS_ID, "kd_camera_hw", pSensorDrive_getDefaultData},
-    #endif
-    #if defined(FM50AF)
-        //{DUMMY_SENSOR_ID, FM50AF_LENS_ID, "FM50AF", pFM50AF_getDefaultData},
-    #endif
-    #if defined(DW9714AF)
-        //{IMX135_SENSOR_ID, DW9714AF_LENS_ID, "DW9714AF", pDW9714AF_getDefaultData},
         {IMX179_SENSOR_ID, DW9714AF_LENS_ID, "DW9714AF", pDW9714AF_getDefaultData},
         {IMX219_SENSOR_ID, DW9714AF_LENS_ID, "DW9714AF", pDW9714AF_getDefaultData},
 	{S5K5E2YA_SENSOR_ID, DW9714AF_LENS_ID, "DW9714AF", pDW9714AF_getDefaultData},
-    #endif
     #if defined(DW9718AF)
         {IMX135_SENSOR_ID, DW9718AF_LENS_ID, "DW9718AF", pDW9718AF_getDefaultData},
     #endif
@@ -114,8 +103,6 @@ MSDK_LENS_INIT_FUNCTION_STRUCT LensList_main[MAX_NUM_OF_SUPPORT_LENS] =
        {OV5670MIPI_SENSOR_ID, DW9814AF_LENS_ID, "DW9814AF", pDW9814AF_getDefaultData},
     #endif
 
-    {OV5648MIPI_SENSOR_ID, GAF001AF_LENS_ID, "0x9714", pGAF001AF_getDefaultData},
-    //{OV5648MIPI_SENSOR_ID_TRULY, GAF002AF_LENS_ID, "0x9714", pGAF002AF_getDefaultData},
 
 };
 MSDK_LENS_INIT_FUNCTION_STRUCT LensList_sub[MAX_NUM_OF_SUPPORT_LENS] =
