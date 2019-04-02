@@ -1,3 +1,2 @@
-# Automatically generated file; DO NOT EDIT.
-
+# Platform
 TARGET_BRM_PLATFORM := mt6580

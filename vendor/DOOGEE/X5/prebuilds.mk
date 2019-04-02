@@ -11,20 +11,20 @@ GAPPS_VARIANT := pico
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 DONT_DEXPREOPT_PREBUILTS := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
-GAPPS_FORCE_BROWSER_OVERRIDES := true
+GAPPS_FORCE_BROWSER_OVERRIDES := false
 
 PRODUCT_PACKAGES += \
     GoogleTTS \
-	PixelLauncher \
+    PixelLauncher \
     LatinImeGoogle \
     Chrome \
     Velvet \
-    Gmail \
-	CalendarGooglePrebuilt
+    Gmail
 
 GAPPS_EXCLUDED_PACKAGES := \
 	Video \
-	Videos
+	Videos \
+	CalendarGooglePrebuilt 
 
 $(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
 

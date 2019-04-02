@@ -10,25 +10,11 @@ service akmd8963 /vendor/bin/akmd8963
     user system
     group system
 
-
 on post-fs
-
-
-    
- 		
- 
-    
-
-
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
 on boot
-
-
-
-
-
 service spm_script /vendor/bin/spm_loader
     user system
     group system
