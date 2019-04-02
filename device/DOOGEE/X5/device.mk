@@ -9,7 +9,6 @@ SPFTDIR := $(LOCAL_PATH)/spft
 PERMSDIR := $(CONFIGDIR)/permissions
 THERMALDIR := $(CONFIGDIR)/thermal
 AUDIODIR := $(CONFIGDIR)/audio
-MEDIADIR := $(CONFIGDIR)/media
 KPDDIR := $(CONFIGDIR)/kpd
 
 # Packages
@@ -47,16 +46,7 @@ PRODUCT_COPY_FILES += $(PERMSDIR)/android.hardware.microphone.xml:$(TARGET_COPY_
 PRODUCT_COPY_FILES += $(PERMSDIR)/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml
 PRODUCT_COPY_FILES += $(AUDIODIR)/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf:mtk
 
-# Video codec/profile support
-PRODUCT_COPY_FILES += $(MEDIADIR)/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml:mtk
-PRODUCT_COPY_FILES += $(MEDIADIR)/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml:mtk
-PRODUCT_COPY_FILES += $(MEDIADIR)/media_codecs_mediatek_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_audio.xml:mtk
-PRODUCT_COPY_FILES += $(MEDIADIR)/media_codecs_mediatek_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_video.xml:mtk
-PRODUCT_COPY_FILES += $(MEDIADIR)/mtk_omx_core.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_omx_core.cfg:mtk
-PRODUCT_COPY_FILES += frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml
-PRODUCT_COPY_FILES += frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
-
-PRODUCT_COPY_FILES += device/mediatek/mt6580/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml:mtk
+# Media
 PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
 
 # Vendor override props

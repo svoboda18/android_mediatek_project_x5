@@ -1,10 +1,7 @@
 PRODUCT_PACKAGES += \
-	busybox \
-	su
+	busybox
 
 PRODUCT_PACKAGES += mediatek-cta
-
-SUPERUSER_EMBEDDED := true
 
 # GAPPS apps
 GAPPS_VARIANT := pico
@@ -13,18 +10,10 @@ DONT_DEXPREOPT_PREBUILTS := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_BROWSER_OVERRIDES := false
 
-PRODUCT_PACKAGES += \
-    GoogleTTS \
-    PixelLauncher \
-    LatinImeGoogle \
-    Chrome \
-    Velvet \
-    Gmail
-
 GAPPS_EXCLUDED_PACKAGES := \
-	Video \
-	Videos \
-	CalendarGooglePrebuilt 
+    Video \
+    Videos \
+    CalendarGooglePrebuilt 
 
 $(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
 
