@@ -15,6 +15,7 @@ KPDDIR := $(CONFIGDIR)/kpd
 # Packages
 PRODUCT_PACKAGES += tiny_fallocate
 PRODUCT_PACKAGES += DangerDash
+PRODUCT_PACKAGES += libperfctl_vendor
 PRODUCT_PACKAGES += chattr
 
 # Overlays
