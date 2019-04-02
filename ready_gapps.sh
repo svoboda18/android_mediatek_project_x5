@@ -8,7 +8,7 @@ read -p 'Do you want to clone all needed gapps files? (y) ' gapps
 
 fclone() {
 	[ -d $2 ] && rm -rf $2
-	git clone $1 $2 $(echo $3)
+	git clone --depth=4 $1 $2 $(echo $3)
 }
 
 fclone https://github.com/opengapps/aosp_build vendor/opengapps/build
