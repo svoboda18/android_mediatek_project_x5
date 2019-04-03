@@ -7,16 +7,14 @@ GAPPS_FORCE_PACKAGE_OVERRIDES := false
 DONT_DEXPREOPT_PREBUILTS := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_BROWSER_OVERRIDES := true
+GAPPS_FORCE_PIXEL_LAUNCHER := true
+
 
 PRODUCT_PACKAGES += \
-    PixelLauncher \
-    Chrome \
     Velvet \
-    Youtube
+    YouTube
 
 GAPPS_EXCLUDED_PACKAGES := \
-    Video \
-    Videos \
     CalendarGooglePrebuilt 
 
 $(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
