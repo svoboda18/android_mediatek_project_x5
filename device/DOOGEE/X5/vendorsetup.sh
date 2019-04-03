@@ -14,6 +14,5 @@
 # limitations under the License.
 #
 
-#add_lunch_combo full_X5-eng
 add_lunch_combo full_X5-userdebug
 add_lunch_combo full_X5-user

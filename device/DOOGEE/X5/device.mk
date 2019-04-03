@@ -53,7 +53,8 @@ PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.security_patch=2019-01-05 \
     qemu.hw.mainkeys=1 \
-    ro.sf.lcd_density=320 \
+    ro.audio.ignore_effects=true \
+    ro.sf.lcd_density=320
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += persist.sys.usb.config=mtp
