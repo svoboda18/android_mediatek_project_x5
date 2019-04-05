@@ -44,7 +44,10 @@ PRODUCT_COPY_FILES += frameworks/av/media/libeffects/data/audio_effects.conf:sys
 PRODUCT_COPY_FILES += $(PERMSDIR)/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml
 PRODUCT_COPY_FILES += $(PERMSDIR)/android.hardware.microphone.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.microphone.xml
 PRODUCT_COPY_FILES += $(PERMSDIR)/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml
+
+# Audio
 PRODUCT_COPY_FILES += $(AUDIODIR)/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf:mtk
+PRODUCT_COPY_FILES += $(AUDIODIR)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml:mtk
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
@@ -53,27 +56,30 @@ PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.security_patch=2019-01-05 \
     qemu.hw.mainkeys=1 \
-    ro.audio.ignore_effects=true \
     ro.sf.lcd_density=320
 
 # USB
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += persist.sys.usb.config=mtp
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += persist.service.acm.enable=0
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.mount.fs=EXT4
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp \
+    persist.service.acm.enable=0 \
+    ro.mount.fs=EXT4
 
 # Ovrride plat
-PRODUCT_PROPERTY_OVERRIDES += ro.mediatek.chip_ver=S01
-PRODUCT_PROPERTY_OVERRIDES += ro.mediatek.platform=MT6580
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.mediatek.chip_ver=S01 \
+    ro.mediatek.platform=MT6580 \
 
 # Ovvride sim
-PRODUCT_PROPERTY_OVERRIDES += ro.telephony.sim.count=2
-PRODUCT_PROPERTY_OVERRIDES += persist.radio.default.sim=0
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.telephony.sim.count=2 \
+    persist.radio.default.sim=0
 
 # HWUI
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.hwui.path_cache_size=0
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.hwui.text_small_cache_width=512
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.hwui.text_small_cache_height=256
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.hwui.disable_asset_atlas=true
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.hwui.path_cache_size=0 \
+    ro.hwui.text_small_cache_width=512 \
+    ro.hwui.text_small_cache_height=256 \
+    ro.hwui.disable_asset_atlas=true
 
 # Keyboard layout
 PRODUCT_COPY_FILES += device/mediatek/mt6580/ACCDET.kl:system/usr/keylayout/ACCDET.kl:mtk

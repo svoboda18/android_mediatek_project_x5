@@ -39,13 +39,11 @@
 #define _MTK_CUSTOM_PROJECT_HAL_IMGSENSOR_SRC_CONFIGFTBLCOMMONRAW_H_
 #if 1
 //
-#define SENSOR_DRVNAME_COMMON_RAW   "common.raw"
-
 
 /*******************************************************************************
  *
  ******************************************************************************/
-FTABLE_DEFINITION(SENSOR_DRVNAME_COMMON_RAW)
+FTABLE_DEFINITION(SENSOR_DRVNAME_S5K5E2YA_MIPI_RAW)
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FTABLE_SCENE_INDEP()
     //==========================================================================
@@ -127,11 +125,12 @@ FTABLE_SCENE_INDEP()
     FTABLE_CONFIG_AS_TYPE_OF_DEFAULT_VALUES(
         KEY_AS_(MtkCameraParameters::KEY_PREVIEW_SIZE),
         SCENE_AS_DEFAULT_SCENE(
-            ITEM_AS_DEFAULT_("640x480"),
+            ITEM_AS_DEFAULT_("3456x2304"),
             ITEM_AS_VALUES_(
                 "176x144",      "320x240",      "352x288",      "480x320",      "480x368",
                 "640x480",      "720x480",      "800x480",      "800x600",      "864x480",
-                "960x540",      "1280x720",     "1920x1080",    "1920x1088",    "1680x1248", "3600x2160", 
+                "960x540",      "1280x720",     "1920x1080",    "1920x1088",    "1680x1248", "3600x2160", "3456x2304", 
+
             )
         ),
     )
