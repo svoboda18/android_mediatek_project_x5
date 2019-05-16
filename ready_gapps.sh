@@ -1,19 +1,48 @@
 #!/bin/bash
 
-echo 'Welcome to opengapps packages adder!'
+force_clone() {
+	[ -d "$2" ] && rm -rf $2
+	git clone --depth=800 $1 $2 $(echo $3)
+}
+echo " "
+echo '========================================================='
+echo '=        Welcome to opengapps packages installer        ='
+echo '========================================================='
 sleep 1
 
-read -p 'Do you want to clone all needed gapps files? (y) ' gapps
-[ $gapps = 'y' ] && {
+echo " "
+echo '========================================================='
+echo '=  Do you want to shallow clone all needed gapps files? =' 
+echo '========================================================='
+read answer
 
-fclone() {
-	[ -d $2 ] && rm -rf $2
-	git clone --depth=509 $1 $2 $(echo $3) # 500 approx 26gb
-}
+case $answer in
+	y|Y|Yes|Yup|yup) {
+						echo " "
+						echo '========================================================='
+						echo '=           Whats your target arch? (arm/arm64)         =' 
+						echo '========================================================='
+						read arch
 
-fclone https://github.com/opengapps/aosp_build vendor/opengapps/build
-fclone https://gitlab.nezorfla.me/opengapps/all vendor/opengapps/sources/all
-fclone https://gitlab.nezorfla.me/opengapps/arm vendor/opengapps/sources/arm
-#fclone https://gitlab.nezorfla.me/opengapps/arm64 vendor/opengapps/sources/arm64
-
-}
+						case $arch in
+							    arm )
+									force_clone https://github.com/opengapps/aosp_build vendor/opengapps/build
+									force_clone https://gitlab.nezorfla.me/opengapps/all vendor/opengapps/sources/all
+									force_clone https://gitlab.nezorfla.me/opengapps/arm vendor/opengapps/sources/arm
+									;;
+								arm64 )
+									force_clone https://github.com/opengapps/aosp_build vendor/opengapps/build
+									force_clone https://gitlab.nezorfla.me/opengapps/all vendor/opengapps/sources/all
+									force_clone https://gitlab.nezorfla.me/opengapps/arm vendor/opengapps/sources/arm
+									force_clone https://gitlab.nezorfla.me/opengapps/arm64 vendor/opengapps/sources/arm64
+									;;
+								* ) echo "Wrong arch" ; exit ;;
+						esac
+						
+												echo " "
+						echo '========================================================='
+						echo '=           GOOD BYE BOSS | Happy ROM Building          =' 
+						echo '========================================================='
+						echo " "
+};;
+esac

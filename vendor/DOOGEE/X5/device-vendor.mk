@@ -1,2 +1,0 @@
-# Platform
-TARGET_BRM_PLATFORM := mt6580

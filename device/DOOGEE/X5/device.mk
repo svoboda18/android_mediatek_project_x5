@@ -1,3 +1,4 @@
+# ProjectConfig
 include device/DOOGEE/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 
 # Local dir(s)
@@ -54,7 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
 
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.security_patch=2019-01-05 \
+    ro.vendor.security_patch=2019-04-05 \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
 
@@ -102,6 +103,5 @@ PRODUCT_COPY_FILES += $(SPFTDIR)/preloader_hct6580_weg_c_m.bin:$(OUT)/preloader_
 # Common mt6580 device
 $(call inherit-product, device/mediatek/mt6580/device.mk)
 
-# X5 vendor
-$(call inherit-product, vendor/DOOGEE/X5/device-vendor.mk)
+# X5 prebuilds
 include vendor/DOOGEE/X5/prebuilds.mk
