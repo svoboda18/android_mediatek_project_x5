@@ -48,6 +48,7 @@ LOCAL_C_INCLUDES :=  \
 LOCAL_SHARED_LIBRARIES := \
     libutils \
     libcutils \
+    libpq_prot \
     liblog
 
 ifeq (,$(filter $(strip $(MTK_PQ_SUPPORT)), no PQ_OFF))
