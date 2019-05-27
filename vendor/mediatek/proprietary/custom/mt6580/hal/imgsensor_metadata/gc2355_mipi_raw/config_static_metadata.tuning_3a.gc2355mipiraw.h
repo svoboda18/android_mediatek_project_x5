@@ -362,8 +362,6 @@ static tag_info_t android_statistics_info[ANDROID_STATISTICS_INFO_END -
     { "maxSharpnessMapValue",          TYPE_INT32  },
     [ ANDROID_STATISTICS_INFO_SHARPNESS_MAP_SIZE - ANDROID_STATISTICS_INFO_START ] =
     { "sharpnessMapSize",              TYPE_INT32  },
-    [ MTK_STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES - ANDROID_STATISTICS_INFO_START ] =
-    { "availableHotPixelMapModes",              TYPE_BYTE  },
 };
 
 static tag_info_t android_tonemap[ANDROID_TONEMAP_END -

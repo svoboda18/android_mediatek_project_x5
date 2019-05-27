@@ -60,22 +60,6 @@ STATIC_METADATA2_BEGIN(DEVICE, FEATURE, SENSOR_DRVNAME_GC2355_MIPI_RAW)
         CONFIG_ENTRY_VALUE(15,  MINT32)
     CONFIG_METADATA_END()
     //==========================================================================
-    //==========================================================================
-    CONFIG_METADATA_BEGIN(MTK_FACE_FEATURE_AVAILABLE_GESTURE_MODES)
-        CONFIG_ENTRY_VALUE(MTK_FACE_FEATURE_GESTURE_MODE_OFF,  MINT32)
-        CONFIG_ENTRY_VALUE(MTK_FACE_FEATURE_GESTURE_MODE_SIMPLE,  MINT32)
-    CONFIG_METADATA_END()
-    //==========================================================================
-    //==========================================================================
-    CONFIG_METADATA_BEGIN(MTK_FACE_FEATURE_AVAILABLE_SMILE_DETECT_MODES)
-        CONFIG_ENTRY_VALUE(MTK_FACE_FEATURE_SMILE_DETECT_MODE_OFF,  MINT32)
-    CONFIG_METADATA_END()
-    //==========================================================================
-    //==========================================================================
-    CONFIG_METADATA_BEGIN(MTK_FACE_FEATURE_AVAILABLE_ASD_MODES)
-        CONFIG_ENTRY_VALUE(MTK_FACE_FEATURE_ASD_MODE_OFF,  MINT32)
-    CONFIG_METADATA_END()
-    //==========================================================================
 //------------------------------------------------------------------------------
 STATIC_METADATA_END()
 

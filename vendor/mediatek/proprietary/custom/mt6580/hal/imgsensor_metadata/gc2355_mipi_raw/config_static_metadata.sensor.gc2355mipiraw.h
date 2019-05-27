@@ -62,7 +62,7 @@ STATIC_METADATA2_BEGIN(DEVICE, SENSOR, SENSOR_DRVNAME_GC2355_MIPI_RAW)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_SENSOR_INFO_COLOR_FILTER_ARRANGEMENT)
-        CONFIG_ENTRY_VALUE(MTK_SENSOR_INFO_COLOR_FILTER_ARRANGEMENT_RGGB, MUINT8)
+        CONFIG_ENTRY_VALUE(MTK_SENSOR_INFO_COLOR_FILTER_ARRANGEMENT_BGGR, MUINT8)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_SENSOR_INFO_EXPOSURE_TIME_RANGE)// 1 us - 30 sec
@@ -75,8 +75,8 @@ STATIC_METADATA2_BEGIN(DEVICE, SENSOR, SENSOR_DRVNAME_GC2355_MIPI_RAW)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_SENSOR_INFO_PHYSICAL_SIZE) // mm
-        CONFIG_ENTRY_VALUE(2.82f, MFLOAT)
-        CONFIG_ENTRY_VALUE(2.16f, MFLOAT)
+        CONFIG_ENTRY_VALUE(3.20f, MFLOAT)
+        CONFIG_ENTRY_VALUE(2.40f, MFLOAT)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_SENSOR_INFO_PIXEL_ARRAY_SIZE)
@@ -84,7 +84,7 @@ STATIC_METADATA2_BEGIN(DEVICE, SENSOR, SENSOR_DRVNAME_GC2355_MIPI_RAW)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_SENSOR_INFO_WHITE_LEVEL)
-        CONFIG_ENTRY_VALUE(4095, MINT32)
+        CONFIG_ENTRY_VALUE(4000, MINT32)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_SENSOR_INFO_TIMESTAMP_SOURCE)

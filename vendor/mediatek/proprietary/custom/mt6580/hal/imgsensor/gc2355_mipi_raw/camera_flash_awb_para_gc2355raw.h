@@ -32,7 +32,7 @@
  * have been modified by MediaTek Inc. All revisions are subject to any receiver's
  * applicable license agreements with MediaTek Inc.
  */
- 
+
 /********************************************************************************************
  *     LEGAL DISCLAIMER
  *
@@ -88,13 +88,13 @@ TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICE
     100, //FgBgTbl_Y5
       5, //YPrimeWeightTh[0]
       9, //YPrimeWeightTh[1]
-		 11, //YPrimeWeightTh[2]
-		 13, //YPrimeWeightTh[3]
-		 15, //YPrimeWeightTh[4]
-			1, //YPrimeWeight[0]
-			3, //YPrimeWeight[1]
-			5, //YPrimeWeight[2]
-			7, //YPrimeWeight[3]
+         11, //YPrimeWeightTh[2]
+         13, //YPrimeWeightTh[3]
+         15, //YPrimeWeightTh[4]
+            1, //YPrimeWeight[0]
+            3, //YPrimeWeight[1]
+            5, //YPrimeWeight[2]
+            7, //YPrimeWeight[3]
 },
 
 // Flash AWB calibration

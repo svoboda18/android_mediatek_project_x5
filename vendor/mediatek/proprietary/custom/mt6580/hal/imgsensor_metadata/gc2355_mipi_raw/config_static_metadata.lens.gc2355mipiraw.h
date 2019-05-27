@@ -51,7 +51,7 @@ STATIC_METADATA2_BEGIN(DEVICE, LENS, SENSOR_DRVNAME_GC2355_MIPI_RAW)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_LENS_INFO_AVAILABLE_FOCAL_LENGTHS)
-        CONFIG_ENTRY_VALUE(2.00f, MFLOAT)
+        CONFIG_ENTRY_VALUE(3.30f, MFLOAT)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION)
@@ -69,19 +69,6 @@ STATIC_METADATA2_BEGIN(DEVICE, LENS, SENSOR_DRVNAME_GC2355_MIPI_RAW)
     CONFIG_METADATA_BEGIN(MTK_LENS_INFO_FOCUS_DISTANCE_CALIBRATION)
         CONFIG_ENTRY_VALUE(MTK_LENS_INFO_FOCUS_DISTANCE_CALIBRATION_UNCALIBRATED, MUINT8)
     CONFIG_METADATA_END()
-    //==========================================================================
-    /***
-    CONFIG_METADATA_BEGIN(MTK_LENS_OPTICAL_AXIS_ANGLE)
-        CONFIG_ENTRY_VALUE(1.0, MFLOAT)
-        CONFIG_ENTRY_VALUE(2.0, MFLOAT)
-    CONFIG_METADATA_END()
-    //==========================================================================
-    CONFIG_METADATA_BEGIN(MTK_LENS_POSITION)
-            CONFIG_ENTRY_VALUE(1.0, MFLOAT)
-            CONFIG_ENTRY_VALUE(2.0, MFLOAT)
-            CONFIG_ENTRY_VALUE(5.0, MFLOAT)
-    CONFIG_METADATA_END()
-    ***/
     //==========================================================================
 //    CONFIG_METADATA_BEGIN(MTK_LENS_INFO_SHADING_MAP,
 //        1.f, 1.f, 1.f
