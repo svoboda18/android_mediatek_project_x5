@@ -1,5 +1,6 @@
-mkdir /data/misc/sensors 0664 system system
-
+on post-fs-data
+    mkdir /data/misc/sensors 0664 system system
+    
 service msensord /vendor/bin/msensord
     user system
     group system

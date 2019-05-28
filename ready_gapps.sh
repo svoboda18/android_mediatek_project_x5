@@ -2,7 +2,7 @@
 
 force_clone() {
 	[ -d "$2" ] && rm -rf $2
-	git clone --depth=800 $1 $2 $(echo $3)
+	git clone --depth=600 $1 $2 $(echo $3)
 }
 echo " "
 echo '========================================================='
@@ -25,18 +25,18 @@ case $answer in
 						read arch
 
 						case $arch in
-							    arm )
+							    arm)
 									force_clone https://github.com/opengapps/aosp_build vendor/opengapps/build
 									force_clone https://gitlab.nezorfla.me/opengapps/all vendor/opengapps/sources/all
 									force_clone https://gitlab.nezorfla.me/opengapps/arm vendor/opengapps/sources/arm
 									;;
-								arm64 )
+								arm64)
 									force_clone https://github.com/opengapps/aosp_build vendor/opengapps/build
 									force_clone https://gitlab.nezorfla.me/opengapps/all vendor/opengapps/sources/all
 									force_clone https://gitlab.nezorfla.me/opengapps/arm vendor/opengapps/sources/arm
 									force_clone https://gitlab.nezorfla.me/opengapps/arm64 vendor/opengapps/sources/arm64
 									;;
-								* ) echo "Wrong arch" ; exit ;;
+								 *) echo "Wrong arch" ; exit ;;
 						esac
 						
 												echo " "

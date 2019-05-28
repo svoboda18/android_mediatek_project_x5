@@ -8,11 +8,11 @@ on post-fs-data
     chmod 0660 /dev/DW9714AF
     chown system camera /dev/DW9714AF
 
+    chmod 0660 /dev/DW9714AF_DRV
+    chown system camera /dev/DW9714AF_DRV
+
     chown system system /proc/smb/ScreenComm
     chmod 0660 /proc/smb/ScreenComm
-
-    chmod 0660 /dev/spm
-    chown system system /dev/spm
 
 on boot
 service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d

@@ -2,6 +2,7 @@
 # init.d support
 #
 
+# init.d support
 sys.initd=1
 sys.initd.loop=1
 
