@@ -5,7 +5,7 @@
   to change the bluetooth name on the user-space
 */
 
-#ifndef _BDROID_BUILDCFG_H
+#ifdef _BDROID_BUILDCFG_H
 #undef _BDROID_BUILDCFG_H
 #endif
 
