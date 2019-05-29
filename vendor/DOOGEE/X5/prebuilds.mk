@@ -15,7 +15,7 @@ PRODUCT_PACKAGES += \
     YouTube \
     Velvet \
     WebViewGoogle \
-    WebViewStub \
+    WebViewStub
 
 GAPPS_EXCLUDED_PACKAGES := \
     Movies \
