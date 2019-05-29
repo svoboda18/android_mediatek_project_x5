@@ -10,6 +10,8 @@ GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 
 PRODUCT_PACKAGES += \
     Chrome \
+    LatinImeGoogle \
+    Drive \
     YouTube \
     Velvet \
     WebViewGoogle \
@@ -18,6 +20,7 @@ PRODUCT_PACKAGES += \
 GAPPS_EXCLUDED_PACKAGES := \
     Movies \
     Music \
+    Videos \
     CalendarGooglePrebuilt 
 
 $(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
