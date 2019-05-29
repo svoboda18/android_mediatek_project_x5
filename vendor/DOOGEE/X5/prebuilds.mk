@@ -10,8 +10,6 @@ GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 
 PRODUCT_PACKAGES += \
     Chrome \
-    Gmail \
-    KeyboardGoogle \
     YouTube \
     Velvet \
     WebViewGoogle \

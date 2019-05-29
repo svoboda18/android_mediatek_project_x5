@@ -40,17 +40,9 @@ STATIC_METADATA2_BEGIN(DEVICE, FLASHLIGHT, SENSOR_DRVNAME_GC2355_MIPI_RAW)
 //------------------------------------------------------------------------------
 //  android.flash.info
 //------------------------------------------------------------------------------
-    uint_t uFacing = rInfo.getFacing();
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_FLASH_INFO_AVAILABLE)
-    if (0 == uFacing)
-    {
-        CONFIG_ENTRY_VALUE(MTK_FLASH_INFO_AVAILABLE_TRUE, MUINT8)
-    }
-    else
-    {
-        CONFIG_ENTRY_VALUE(MTK_FLASH_INFO_AVAILABLE_FALSE, MUINT8)
-    }
+    CONFIG_ENTRY_VALUE(MTK_FLASH_INFO_AVAILABLE_FALSE, MUINT8)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_FLASH_INFO_CHARGE_DURATION)
