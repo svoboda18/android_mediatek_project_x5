@@ -1,7 +1,7 @@
 Mediatek ALPS
 =================
-- Those files are used to correctly collect the mediatek alps
-  For the `` DOOGEE X5 `` device. collected by svoboda18, snowcat16, rock1234.
+- This repo, contains files that are need to be used in order to correctly collect the mediatek alps
+  for **DOOGEE X5** device.
 
 # X5 Speces:
 - MT6580 Chipset
@@ -33,3 +33,6 @@ Mediatek ALPS
 
 # Whats Not Working:
 - Nothing.
+
+# Credits:
+* All credits belongs to svoboda18, most thanks for Andrey and other great 4pda people.
