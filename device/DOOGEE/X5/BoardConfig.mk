@@ -10,7 +10,6 @@ include device/mediatek/mt6580/BoardConfig.mk
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 4096
 
-
 # Use the project config
 include device/DOOGEE/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 
@@ -24,3 +23,4 @@ MTK_GLOBAL_CFLAGS += $(MTK_INTERNAL_CDEFS)
 # Boot cmd-line
 BOARD_KERNEL_CMDLINE = bootopt=64S3,32N2,64N2
 
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/DOOGEE/X5/bluetooth

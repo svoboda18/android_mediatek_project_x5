@@ -12,12 +12,6 @@ THERMALDIR := $(CONFIGDIR)/thermal
 AUDIODIR := $(CONFIGDIR)/audio
 KPDDIR := $(CONFIGDIR)/kpd
 
-# Packages
-PRODUCT_PACKAGES += tiny_fallocate
-PRODUCT_PACKAGES += DangerDash
-PRODUCT_PACKAGES += libperfctl_vendor
-PRODUCT_PACKAGES += chattr
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/sd_in_ex_otg
@@ -93,6 +87,7 @@ PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/sound/te
 PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/sound/ringtone.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/ringtone.wav:mtk
 
 # SPFT Files
+PRODUCT_COPY_FILES += $(SPFTDIR)/secro.img:$(OUT)/secro.img
 PRODUCT_COPY_FILES += $(SPFTDIR)/lk.bin:$(OUT)/lk.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/logo.bin:$(OUT)/logo.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT)/nvdata.bin
