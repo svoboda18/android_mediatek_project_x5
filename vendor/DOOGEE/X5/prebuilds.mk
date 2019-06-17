@@ -4,11 +4,13 @@ PRODUCT_PACKAGES += \
 
 # GAPPS apps
 GAPPS_VARIANT := pico
+DONT_DEXPREOPT_PREBUILTS := true
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 
 PRODUCT_PACKAGES += \
     Chrome \
     LatinImeGoogle \
+    Velvet \
     YouTube
 
 GAPPS_EXCLUDED_PACKAGES := \
