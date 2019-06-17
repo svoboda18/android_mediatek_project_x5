@@ -88,6 +88,7 @@ PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/sound/ri
 
 # SPFT Files
 PRODUCT_COPY_FILES += $(SPFTDIR)/secro.img:$(OUT)/secro.img
+PRODUCT_COPY_FILES += $(SPFTDIR)/twrp.img:$(OUT)/twrp.img
 PRODUCT_COPY_FILES += $(SPFTDIR)/lk.bin:$(OUT)/lk.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/logo.bin:$(OUT)/logo.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT)/nvdata.bin
