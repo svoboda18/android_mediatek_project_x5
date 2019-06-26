@@ -5,10 +5,20 @@ PRODUCT_PACKAGES += \
 # GAPPS apps
 GAPPS_VARIANT := pico
 DONT_DEXPREOPT_PREBUILTS := true
+GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 
 PRODUCT_PACKAGES += \
     Chrome \
+    CalendarGooglePrebuilt \
+    CalculatorGoogle \
+    Wallpapers \
+    GoogleContacts \
+    GoogleContactsSyncAdapter \
+    GoogleDialer \
+    PrebuiltBugle \
+    GooglePackageInstaller \
+    PrebuiltDeskClockGoogle \
     LatinImeGoogle \
     Velvet \
     YouTube
