@@ -12,13 +12,15 @@ PRODUCT_PACKAGES += \
     Chrome \
     CalendarGooglePrebuilt \
     CalculatorGoogle \
+    PrebuiltDeskClockGoogle \
     Wallpapers \
     GoogleContacts \
     GoogleContactsSyncAdapter \
     GoogleDialer \
+    DialerFramework \
     PrebuiltBugle \
+    PixelLauncher \
     GooglePackageInstaller \
-    PrebuiltDeskClockGoogle \
     LatinImeGoogle \
     Velvet \
     YouTube

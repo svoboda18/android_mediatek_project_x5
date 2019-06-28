@@ -26,9 +26,9 @@ case $answer in
 
 						case $arch in
 							    arm)
-									force_clone https://github.com/opengapps/aosp_build vendor/opengapps/build
-									force_clone https://gitlab.nezorfla.me/opengapps/all vendor/opengapps/sources/all
-									force_clone https://gitlab.nezorfla.me/opengapps/arm vendor/opengapps/sources/arm
+									force_clone https://github.com/svoboda18/aosp_build vendor/opengapps/build
+									force_clone https://gitlab.opengapps.org/opengapps/all.git vendor/opengapps/sources/all
+									force_clone https://gitlab.opengapps.org/opengapps/arm.git vendor/opengapps/sources/arm
 									;;
 								arm64)
 									force_clone https://github.com/opengapps/aosp_build vendor/opengapps/build
