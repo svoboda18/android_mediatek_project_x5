@@ -1,6 +1,6 @@
 Partition_Name,Type,Size_KB,,Region,Reserved,Download,Download_File,OTA_Update,EmptyBoot_Needed,FastBoot_Erase,,FastBoot_Download,,Operation_Type
 ,,eng,user,,,,,,,eng,user,eng,user,
-preloader,Raw data,256.0,,EMMC_BOOT1_BOOT2,N,Y,AUTO,N,N,N,,N,,BOOTLOADERS
+preloader,Raw data,512.0,,EMMC_BOOT1_BOOT2,N,Y,AUTO,N,N,N,,N,,BOOTLOADERS
 pgpt,Raw data,512.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
 proinfo,Raw data,3072.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,PROTECTED
 nvram,Raw data,5120.0,,EMMC_USER,N,Y,nvram.bin,N,N,N,,N,,BINREGION
@@ -8,8 +8,8 @@ protect1,EXT4,10240.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,PROTECTED
 protect2,EXT4,10240.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,PROTECTED
 persist,EXT4,49152.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,PROTECTED
 seccfg,Raw data,256.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
-lk,Raw data,384.0,,EMMC_USER,N,Y,lk.img,N,Y,Y,N,Y,N,AUTO
-lk2,Raw data,384.0,,EMMC_USER,N,Y,lk.img,N,N,Y,N,Y,N,AUTO
+lk,Raw data,512.0,,EMMC_USER,N,Y,lk.img,N,Y,Y,N,Y,N,AUTO
+lk2,Raw data,512.0,,EMMC_USER,N,Y,lk.img,N,N,Y,N,Y,N,AUTO
 boot,Raw data,16384.0,,EMMC_USER,N,Y,boot.img,Y,N,Y,,Y,,AUTO
 recovery,Raw data,32384.0,,EMMC_USER,N,Y,recovery.img,Y,N,Y,N,Y,N,AUTO
 para,Raw data,512.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
