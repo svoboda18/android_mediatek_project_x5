@@ -104,11 +104,16 @@
 
 #define BOARD_ID                MT6580_EVB
 
-#define CS_PART_NUMBER[0]      H8G1e
-#define CS_PART_NUMBER[1]      FNX2MB
-#define CS_PART_NUMBER[2]      H8G4
-#define CS_PART_NUMBER[3]      F722MB
-#define CS_PART_NUMBER[4]      Biwin
-//#define CS_PART_NUMBER[5]       H9TA4GH4GDBCPR
+#define CS_PART_NUMBER[0]       FNX2MB
+#define CS_PART_NUMBER[2]       H8G4
+#define CS_PART_NUMBER[3]       H8G1e
+#define CS_PART_NUMBER[4]       F722MB
+#define CS_PART_NUMBER[5]       Biwin
+#define CS_PART_NUMBER[6]       DS1008
+#define CS_PART_NUMBER[7]       V10008
+#define CS_PART_NUMBER[8]       SHP808
+#define CS_PART_NUMBER[9]       EH8CE8
+#define CS_PART_NUMBER[10]       Q72SMB
+//#define CS_PART_NUMBER[11]       P1J95
 
 #endif /* __CUSTOM_MEMORYDEVICE__ */
