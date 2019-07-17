@@ -18,7 +18,8 @@
 <permissions>
     <feature name="android.hardware.camera" />
     <!-- unmark following line if the hardware supports autofocus -->
-    <feature name="android.hardware.camera.autofocus" />
+    <feature name="android.hardware.camera.capability.manual_post_processing" />
+    <feature name="android.hardware.camera.capability.manual_sensor" />
     <feature name="android.hardware.camera.flash" />
     <feature name="android.hardware.camera.front" />
     <feature name="android.hardware.camera.any" />

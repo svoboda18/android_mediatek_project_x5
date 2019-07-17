@@ -1,7 +1,6 @@
 #define LOG_TAG "PQCust"
 
 #define MTK_LOG_ENABLE 1
-#include <cutils/log.h>
 #include <stdint.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>

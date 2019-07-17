@@ -3,7 +3,6 @@ include device/DOOGEE/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 
 # Local dir(s)
 LOCAL_PATH := device/DOOGEE/X5
-OUT := $(TARGET_COPY_OUT_VENDOR)/..
 ROOTDIR := $(LOCAL_PATH)/rootdir
 CONFIGDIR := $(LOCAL_PATH)/configs
 SPFTDIR := $(LOCAL_PATH)/spft
@@ -48,7 +47,7 @@ PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
 
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2019-05-05 \
+    ro.vendor.build.security_patch=2019-07-05 \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
 
@@ -87,13 +86,10 @@ PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/sound/te
 PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/sound/ringtone.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/ringtone.wav:mtk
 
 # SPFT Files
-PRODUCT_COPY_FILES += $(SPFTDIR)/secro.img:$(OUT)/secro.img
-PRODUCT_COPY_FILES += $(SPFTDIR)/twrp.img:$(OUT)/twrp.img
-PRODUCT_COPY_FILES += $(SPFTDIR)/lk.bin:$(OUT)/lk.bin
-PRODUCT_COPY_FILES += $(SPFTDIR)/logo.bin:$(OUT)/logo.bin
-PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT)/nvdata.bin
-PRODUCT_COPY_FILES += $(SPFTDIR)/nvram.bin:$(OUT)/nvram.bin
-PRODUCT_COPY_FILES += $(SPFTDIR)/preloader_hct6580_weg_c_m.bin:$(OUT)/preloader_hct6580_weg_c_m.bin
+PRODUCT_COPY_FILES += $(SPFTDIR)/twrp.img:$(OUT_DIR)/twrp.img
+PRODUCT_COPY_FILES += $(SPFTDIR)/logo.bin:$(OUT_DIR)/logo.bin
+PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT_DIR)/nvdata.bin
+PRODUCT_COPY_FILES += $(SPFTDIR)/nvram.bin:$(OUT_DIR)/nvram.bin
 
 # Common mt6580 device
 $(call inherit-product, device/mediatek/mt6580/device.mk)

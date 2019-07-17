@@ -102,14 +102,13 @@
  ****************************************************************************
 */
 
-#define BOARD_ID                MT6735_EVB
+#define BOARD_ID                MT6580_EVB
 
-#define CS_PART_NUMBER[0]       H9TQ64A8GTMCUR_KUM
-#define CS_PART_NUMBER[1]       KMQ7X000SA_B315
-//#define CS_PART_NUMBER[2]       H9TQ17ABJTMCUR_KUM
-//#define CS_PART_NUMBER[2]       KMR820001M_B609
-//#define CS_PART_NUMBER[3]       KMF5X0005C_B211
-//#define CS_PART_NUMBER[0]       H9TP64A8JDMCPR_KGM
-//#define CS_PART_NUMBER[4]       H9TP32A4GDDCPR_KGM
+#define CS_PART_NUMBER[0]      H8G1e
+#define CS_PART_NUMBER[1]      FNX2MB
+#define CS_PART_NUMBER[2]      H8G4
+#define CS_PART_NUMBER[3]      F722MB
+#define CS_PART_NUMBER[4]      Biwin
+//#define CS_PART_NUMBER[5]       H9TA4GH4GDBCPR
 
 #endif /* __CUSTOM_MEMORYDEVICE__ */

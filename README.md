@@ -13,23 +13,17 @@ Mediatek ALPS
 ## Known information:
 | Subsystem | Driver name | Availability | Working |
 |-----------|-------------|--------------|---------|
-| GPU | `Mali-400 MP2` | Yes | Yes |
-| Camera #1 | `s5k5e2y_mipi_raw` | Yes | Yes |
-| Camera #2 | `gc2355_mipi_raw` | Yes | Yes |
-| Sensors | `MT6516` | Yes | Yes |
-| Flash | `Samsung FNX2MB` | - | Yes |
-| Lens | `DW9714AF` | Yes | Yes |
-| Sound | `mtsndcard` | Yes | Yes |
-| Accdet | `mt6580-accdet` | - | Yes |
+| GPU | `Mali-400 MP2` | Yes | - |
+| Camera #1 | `s5k5e2y_mipi_raw` | Yes | - |
+| Camera #2 | `gc2355_mipi_raw` | Yes | - |
+| Sensors | `MT6516` | Yes | - |
+| Flash | `Samsung FNX2MB` | - | - |
+| Lens | `DW9714AF` | Yes | - |
+| Sound | `mtsndcard` | Yes | - |
+| Accdet | `mt6580-accdet` | - | - |
 
 # Whats Working:
 - Boots.
-- Cameras (8/5 MP), Video Capture, Autofocus
-- HW Composer/ Graphics.
-- WiFi, Bluetooth And GPS.
-- Audio, Microphone.
-- Sim Cards, FM Radio.
-- Gapps, Anything else.
 
 # Whats Not Working:
 - Nothing.
