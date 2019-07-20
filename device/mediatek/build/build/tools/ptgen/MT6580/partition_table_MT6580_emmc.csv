@@ -3,7 +3,7 @@ Partition_Name,Type,Size_KB,,Region,Reserved,Download,Download_File,OTA_Update,E
 preloader,Raw data,512.0,,EMMC_BOOT1_BOOT2,N,Y,AUTO,N,N,N,,N,,BOOTLOADERS
 pgpt,Raw data,512.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
 proinfo,Raw data,3072.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,PROTECTED
-nvram,Raw data,5120.0,,EMMC_USER,N,Y,nvram.bin,N,N,N,,N,,BINREGION
+nvram,Raw data,5120.0,,EMMC_USER,N,N,nvram.bin,N,N,N,,N,,BINREGION
 protect1,EXT4,10240.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,PROTECTED
 protect2,EXT4,10240.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,PROTECTED
 persist,EXT4,49152.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,PROTECTED
@@ -29,7 +29,7 @@ oem,EXT4,65536.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
 frp,Raw data,1024.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
 tee1,Raw data,5120.0,,EMMC_USER,N,Y,tee.img,Y,Y,N,,N,,AUTO
 tee2,Raw data,5120.0,,EMMC_USER,N,Y,tee.img,Y,N,N,,N,,AUTO
-nvdata,EXT4,32768.0,,EMMC_USER,N,Y,nvdata.bin,N,N,N,,N,,AUTO
+nvdata,EXT4,32768.0,,EMMC_USER,N,N,nvdata.bin,N,N,N,,N,,AUTO
 metadata,Raw data,16032.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
 oemkeystore,Raw data,2048.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
 secro,Raw data,6144.0,,EMMC_USER,N,Y,secro.img,N,N,N,,N,,AUTO

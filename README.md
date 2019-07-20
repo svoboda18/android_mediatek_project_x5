@@ -14,8 +14,8 @@ Mediatek ALPS
 | Subsystem | Driver name | Availability | Working |
 |-----------|-------------|--------------|---------|
 | GPU | `Mali-400 MP2` | Yes | - |
-| Camera #1 | `s5k5e2y_mipi_raw` | Yes | - |
-| Camera #2 | `gc2355_mipi_raw` | Yes | - |
+| Camera #1 | `s5k5e2y_mipi_raw` | Yes | Yes |
+| Camera #2 | `gc2355_mipi_raw` | Yes | Yes |
 | Sensors | `MT6516` | Yes | - |
 | Flash | `Samsung FNX2MB` | - | - |
 | Lens | `DW9714AF` | Yes | - |
@@ -24,9 +24,11 @@ Mediatek ALPS
 
 # Whats Working:
 - Boots.
+- Camera (8/5 MP)
+- WiFi/Bluetooth
 
 # Whats Not Working:
-- Nothing.
+- N/A
 
 # Credits:
 * All credits belongs to svoboda18, most thanks for Andrey and other great 4pda people.
