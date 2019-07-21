@@ -16,7 +16,7 @@ Mediatek ALPS
 | GPU | `Mali-400 MP2` | Yes | - |
 | Camera #1 | `s5k5e2y_mipi_raw` | Yes | Yes |
 | Camera #2 | `gc2355_mipi_raw` | Yes | Yes |
-| Sensors | `MT6516` | Yes | - |
+| Sensors | `MT6516` | Yes | Yes |
 | Flash | `Samsung FNX2MB` | - | - |
 | Lens | `DW9714AF` | Yes | - |
 | Sound | `mtsndcard` | Yes | - |
@@ -24,8 +24,9 @@ Mediatek ALPS
 
 # Whats Working:
 - Boots.
-- Camera (8/5 MP)
-- WiFi/Bluetooth
+- Camera (8/5 MP) / Video capture
+- Ril/WiFi/Bluetooth
+- Sensors
 
 # Whats Not Working:
 - N/A
