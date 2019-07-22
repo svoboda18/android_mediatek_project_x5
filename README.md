@@ -18,9 +18,9 @@ Mediatek ALPS
 | Camera #2 | `gc2355_mipi_raw` | Yes | Yes |
 | Sensors | `MT6516` | Yes | Yes |
 | Flash | `Samsung FNX2MB` | - | - |
-| Lens | `DW9714AF` | Yes | - |
-| Sound | `mtsndcard` | Yes | - |
-| Accdet | `mt6580-accdet` | - | - |
+| Lens | `DW9714AF` | Yes | Yes |
+| Sound | `mtsndcard` | Yes | Yes |
+| Accdet | `mt6580-accdet` | - | Yes |
 
 # Whats Working:
 - Boots.

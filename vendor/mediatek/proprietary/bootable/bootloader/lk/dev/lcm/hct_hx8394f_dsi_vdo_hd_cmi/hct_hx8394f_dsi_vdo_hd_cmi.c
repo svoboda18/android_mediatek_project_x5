@@ -266,29 +266,10 @@ static void lcm_init(void)
 
 static void lcm_suspend(void)
 {
-	unsigned int array[16];
-	array[0] = 0x00FE1500;
-	dsi_set_cmdq(array, 1, 1);
-	MDELAY(50);
-	array[0] = 0x00011500;
-	dsi_set_cmdq(array, 1, 1);
-	MDELAY(50);
-	array[0] = 0x00280500;
-	dsi_set_cmdq(array, 1, 1);
-	MDELAY(50);
-	array[0] = 0x00100500;
-	dsi_set_cmdq(array, 1, 1);
-	MDELAY(50);
-	array[0] = 0x014F1500;
-	dsi_set_cmdq(array, 1, 1);
-	MDELAY(50);
 }
 
 static void lcm_resume(void)
 {
-#if 1
-	lcm_init();
-#endif
 }
 
 static unsigned int lcm_compare_id(void)
