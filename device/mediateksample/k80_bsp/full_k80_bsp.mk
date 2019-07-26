@@ -1,6 +1,4 @@
 # Inherit from those products. Most specific first.
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Set target and base project for flavor build
@@ -10,7 +8,6 @@ MTK_PROJECT_FOLDER := $(LOCAL_PATH)
 MTK_TARGET_PROJECT_FOLDER := $(LOCAL_PATH)
 
 # This is where we'd set a backup provider if we had one
-#$(call inherit-product, device/sample/products/backup_overlay.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 include $(LOCAL_PATH)/ProjectConfig.mk
@@ -25,11 +22,7 @@ PRODUCT_MODEL := X5
 PRODUCT_POLICY := android.policy_phone
 PRODUCT_BRAND := DOOGEE
 
-ifeq ($(TARGET_BUILD_VARIANT), eng)
-KERNEL_DEFCONFIG ?= k80_bsp_debug_defconfig
-else
 KERNEL_DEFCONFIG ?= blackghost_defconfig
-endif
 PRELOADER_TARGET_PRODUCT ?= k80_bsp
 LK_PROJECT ?= k80_bsp
 TRUSTY_PROJECT ?= k80_bsp

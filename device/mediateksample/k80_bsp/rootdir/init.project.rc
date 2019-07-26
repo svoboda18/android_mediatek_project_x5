@@ -1,0 +1,31 @@
+on post-fs-data
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/DW9714AF_DRV
+    chown system camera /dev/DW9714AF_DRV
+
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+on boot
+service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
+	user root
+	oneshot
+	disabled
+
+on property:sys.initd=1
+	start sysinit
+
+service sysinitloop /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d.loop
+	user root
+	disabled
+
+on property:sys.initd.loop=1
+	start sysinitloop
