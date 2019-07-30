@@ -4,6 +4,7 @@ include device/mediateksample/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 # Local dir(s)
 LOCAL_PATH := device/mediateksample/k80_bsp
 ROOTDIR := $(LOCAL_PATH)/rootdir
+SPFTDIR := $(LOCAL_PATH)/spft
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -77,6 +78,10 @@ PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/ima
 PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/images/lcd_test_02.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_02.png:mtk
 PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/sound/testpattern1.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/testpattern1.wav:mtk
 PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/sound/ringtone.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/ringtone.wav:mtk
+
+# SPFT
+PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT_DIR)/nvdata.bin
+PRODUCT_COPY_FILES += $(SPFTDIR)/nvram.bin:$(OUT_DIR)/nvram.bin
 
 #Remove overlay here and move to BSP brnach
 ifeq (yes,$(strip $(MTK_GMO_ROM_OPTIMIZE)))
