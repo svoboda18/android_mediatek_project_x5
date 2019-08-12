@@ -39,6 +39,15 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/
 # Media
 PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
 
+# Certification
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.product.board=hct6580_weg_c_m \
+	ro.product.vendor.name=full_hct6580_weg_c_m \
+	ro.product.vendor.device=hct6580_weg_c_m \
+	ro.product.name=full_hct6580_weg_c_m \
+	ro.product.device=hct6580_weg_c_m \
+	ro.build.product=hct6580_weg_c_m
+
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2019-07-05 \
