@@ -24,7 +24,7 @@ Mediatek ALPS
 
 # Whats Working:
 - Boots.
-- Cameras (8/5 MP), Video Capture, Autofocus, Flashlight
+- Cameras (8/5 MP), Video Capture, Flashlight (all modes)
 - HW Composer/ Graphics.
 - WiFi, Bluetooth And GPS.
 - Audio, Microphone.
@@ -32,6 +32,7 @@ Mediatek ALPS
 - Gapps, Anything else.
 
 # Whats Not Working:
+- Autofocus
 - Touch buttons
 
 # Credits:
