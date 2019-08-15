@@ -56,16 +56,13 @@ static LCM_UTIL_FUNCS lcm_util = {0};
 #define read_reg(cmd)   lcm_util.dsi_dcs_read_lcm_reg(cmd)
 #define wrtie_cmd(cmd)	lcm_util.dsi_write_cmd(cmd)
 
- struct LCM_setting_table {
+struct LCM_setting_table {
     unsigned cmd;
     unsigned char count;
     unsigned char para_list[64];
 };
 
-
 static struct LCM_setting_table lcm_initialization_setting[] = {
-    
-{
 	{0xFF, 3, {0x98,0x81,0x07}},
 	{0x03, 1, {0x20}},
 	{0x04, 1, {0x06}},

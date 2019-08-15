@@ -5,6 +5,7 @@ include device/mediateksample/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 LOCAL_PATH := device/mediateksample/k80_bsp
 ROOTDIR := $(LOCAL_PATH)/rootdir
 SPFTDIR := $(LOCAL_PATH)/spft
+BANIMATION := $(LOCAL_PATH)/bootanimation
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -90,6 +91,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Keyboard layout
 PRODUCT_COPY_FILES += device/mediatek/mt6580/ACCDET.kl:system/usr/keylayout/ACCDET.kl:mtk
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl:mtk
+
+# Bootanimation
+PRODUCT_COPY_FILES += $(BANIMATION)/bootanimation.zip:system/media/bootanimation.zip
 
 # Factory test
 PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/images/lcd_test_00.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_00.png:mtk
