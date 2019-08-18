@@ -24,15 +24,15 @@ Mediatek ALPS
 
 # Whats Working:
 - Boots.
-- Cameras (8/5 MP), Video Capture, Flashlight (all modes)
+- Cameras (8/5 MP), Video Capture, Auto-focus, Flashlight (all modes)
 - HW Composer/ Graphics.
 - WiFi, Bluetooth And GPS.
 - Audio, Microphone.
 - Sim Cards, FM Radio.
+- Fast and smooth system.
 - Gapps, Anything else.
 
 # Whats Not Working:
-- Autofocus
 - Touch buttons
 
 # Credits:

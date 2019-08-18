@@ -54,14 +54,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.mtk_perf_simple_start_win=1 \
 	ro.mtk_perf_fast_start_win=1 \
 	ro.mtk_perf_response_time=1 \
-	ro.sys.fw.bg_apps_limit=8 \
+	ro.sys.fw.bg_apps_limit=10 \
 	dalvik.vm.jit.codecachesize=0 \
-	ro.config.max_starting_bg=6 \
+	ro.config.max_starting_bg=8 \
 	config.disable_atlas=true
 
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2019-07-05 \
+    ro.vendor.build.security_patch=2019-08-05 \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
 
