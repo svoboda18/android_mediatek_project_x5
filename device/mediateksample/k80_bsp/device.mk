@@ -54,9 +54,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.mtk_perf_simple_start_win=1 \
 	ro.mtk_perf_fast_start_win=1 \
 	ro.mtk_perf_response_time=1 \
-	ro.sys.fw.bg_apps_limit=10 \
+	ro.sys.fw.bg_apps_limit=8 \
 	dalvik.vm.jit.codecachesize=0 \
-	ro.config.max_starting_bg=8 \
+	ro.config.max_starting_bg=6 \
 	config.disable_atlas=true
 
 # Vendor override props
