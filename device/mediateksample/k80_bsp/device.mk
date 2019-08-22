@@ -17,7 +17,6 @@ PRODUCT_COPY_FILES += $(ROOTDIR)/factory_init.project.rc:$(TARGET_COPY_OUT_VENDO
 PRODUCT_COPY_FILES += $(ROOTDIR)/init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.project.rc
 
 # Thermal
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/thermal_eng.conf:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/thermal.conf:mtk
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/thermal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/thermal.conf:mtk
 
 # Permission
@@ -35,10 +34,8 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/android.hardware.microphone.xml:$(TARGET_COP
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml
 
 # Audio
+PRODUCT_COPY_FILES += frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf:mtk
-
-# Media
-PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
 
 # Certification
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -54,9 +51,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.mtk_perf_simple_start_win=1 \
 	ro.mtk_perf_fast_start_win=1 \
 	ro.mtk_perf_response_time=1 \
-	ro.sys.fw.bg_apps_limit=8 \
+	ro.sys.fw.bg_apps_limit=10 \
 	dalvik.vm.jit.codecachesize=0 \
-	ro.config.max_starting_bg=6 \
+	ro.config.max_starting_bg=8 \
 	config.disable_atlas=true
 
 # Vendor override props

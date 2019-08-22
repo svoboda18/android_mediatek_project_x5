@@ -27,13 +27,13 @@ Mediatek ALPS
 - Cameras (8/5 MP), Video Capture, Auto-focus, Flashlight (all modes)
 - HW Composer/ Graphics.
 - WiFi, Bluetooth And GPS.
+- Rotation, Proximity/Light sensors.
 - Audio, Microphone.
 - Sim Cards, FM Radio.
-- Fast and smooth system.
 - Gapps, Anything else.
 
 # Whats Not Working:
-- Touch buttons
+- Touch buttons (Only)
 
 # Credits:
 * All credits belongs to svoboda18, most thanks for Andrey and other great 4pda people.

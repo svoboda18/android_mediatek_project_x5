@@ -34,7 +34,7 @@ metadata,Raw data,16032.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
 oemkeystore,Raw data,2048.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
 secro,Raw data,6144.0,,EMMC_USER,N,Y,secro.img,N,N,N,,N,,AUTO
 keystore,Raw data,8192.0,,EMMC_USER,N,N,NONE,N,N,Y,,Y,,AUTO
-system,EXT4,1502864.0,,EMMC_USER,N,Y,system.img,Y,N,Y,,Y,,AUTO
+system,EXT4,1542864.0,,EMMC_USER,N,Y,system.img,Y,N,Y,,Y,,AUTO
 cache,EXT4,50144.0,,EMMC_USER,N,Y,cache.img,N,N,Y,,Y,,AUTO
 userdata,EXT4,1792864.0,,EMMC_USER,N,Y,userdata.img,N,N,Y,,Y,,AUTO
 intsd,FAT,0.0,,EMMC_USER,N,N,NONE,N,N,N,,N,,AUTO
