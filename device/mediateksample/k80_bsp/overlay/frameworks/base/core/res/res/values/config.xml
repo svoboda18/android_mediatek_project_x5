@@ -29,6 +29,7 @@
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
     <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
     <bool name="config_useRoundIcon">true</bool>
+    <string name="config_icon_mask" translatable="false">"M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0</string>
     <integer name="config_screenBrightnessDoze">15</integer>
     <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">3000</integer>
