@@ -95,6 +95,17 @@ PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT)/nvdata.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/nvram.bin:$(OUT)/nvram.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/preloader_hct6580_weg_c_m.bin:$(OUT)/preloader_hct6580_weg_c_m.bin
 
+# Bootanimation
+PRODUCT_COPY_FILES += $(BANIMATION)/bootanimation.zip:system/media/bootanimation.zip
+
+#Remove overlay here and move to BSP brnach
+ifeq (yes,$(strip $(MTK_GMO_ROM_OPTIMIZE)))
+  DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_rom
+endif
+ifeq (yes,$(strip $(MTK_GMO_RAM_OPTIMIZE)))
+  DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_ram
+endif
+
 # Common mt6580 device
 $(call inherit-product, device/mediatek/mt6580/device.mk)
 
