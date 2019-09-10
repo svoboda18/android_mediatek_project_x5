@@ -11,6 +11,7 @@ PERMSDIR := $(CONFIGDIR)/permissions
 THERMALDIR := $(CONFIGDIR)/thermal
 AUDIODIR := $(CONFIGDIR)/audio
 KPDDIR := $(CONFIGDIR)/kpd
+BANIMATION := $(LOCAL_PATH)/bootanimation
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -48,7 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
 
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2019-05-05 \
+    ro.vendor.build.security_patch=2019-08-05 \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
 
