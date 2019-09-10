@@ -10,7 +10,7 @@
     <bool name="config_hotswapCapable">true</bool>
     <bool name="config_automatic_brightness_available">true</bool>
     <bool name="config_wifi_dual_band_support">false</bool>
-    <bool name="config_wifi_background_scan_support">true</bool>
+    <bool name="config_wifi_background_scan_support">false</bool>
     <bool name="config_unplugTurnsOnScreen">true</bool>
     <bool name="config_useDevInputEventForAudioJack">true</bool>
     <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
@@ -22,7 +22,6 @@
     <bool name="config_alt_ambient_display">true</bool>
     <bool name="config_enableAutoPowerModes">true</bool>
     <bool name="config_autoPowerModePrefetchLocation">true</bool>
-    <bool name="config_dozePulsePickup">true</bool>
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
     <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
