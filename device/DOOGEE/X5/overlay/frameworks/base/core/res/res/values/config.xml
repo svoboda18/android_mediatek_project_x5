@@ -10,7 +10,7 @@
     <bool name="config_hotswapCapable">true</bool>
     <bool name="config_automatic_brightness_available">true</bool>
     <bool name="config_wifi_dual_band_support">false</bool>
-    <bool name="config_wifi_background_scan_support">true</bool>
+    <bool name="config_wifi_background_scan_support">false</bool>
     <bool name="config_unplugTurnsOnScreen">true</bool>
     <bool name="config_useDevInputEventForAudioJack">true</bool>
     <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
@@ -22,7 +22,6 @@
     <bool name="config_alt_ambient_display">true</bool>
     <bool name="config_enableAutoPowerModes">true</bool>
     <bool name="config_autoPowerModePrefetchLocation">true</bool>
-    <bool name="config_dozePulsePickup">true</bool>
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
     <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
@@ -41,9 +40,7 @@
     <string-array translatable="false" name="config_globalActionsList">
         <item>power</item>
         <item>restart</item>
-        <item>lockdown</item>
         <item>logout</item>
-        <item>bugreport</item>
         <item>screenshot</item>
     </string-array>
 
@@ -55,7 +52,7 @@
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
     <!-- M: Change default long press on home behavior to Recent apps view -->
-    <integer name="config_longPressOnHomeBehavior">1</integer>
+    <integer name="config_longPressOnHomeBehavior">2</integer>
 
     <!-- Control the behavior when the user double-taps the home button.
             0 - Nothing
@@ -63,5 +60,5 @@
          This needs to match the constants in
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
-    <integer name="config_doubleTapOnHomeBehavior">0</integer>
+    <integer name="config_doubleTapOnHomeBehavior">1</integer>
 </resources>

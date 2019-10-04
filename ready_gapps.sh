@@ -2,7 +2,7 @@
 
 force_clone() {
 	[ -d "$2" ] && rm -rf $2
-	git clone --depth=600 $1 $2 $(echo $3)
+	git clone --depth=1 $1 $2 $(echo $3)
 }
 echo " "
 echo '========================================================='
