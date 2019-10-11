@@ -9,16 +9,7 @@ GAPPS_FORCE_PACKAGE_OVERRIDES := true
 
 PRODUCT_PACKAGES += \
     Chrome \
-    CalendarGooglePrebuilt \
-    CalculatorGoogle \
-    PrebuiltDeskClockGoogle \
     Wallpapers \
-    GoogleContacts \
-    GoogleContactsSyncAdapter \
-    GoogleDialer \
-    DialerFramework \
-    PrebuiltBugle \
-    PixelLauncher \
     LatinImeGoogle \
     Vevelt \
     YouTube

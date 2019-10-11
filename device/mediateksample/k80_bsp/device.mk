@@ -58,7 +58,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2019-08-05 \
+    ro.vendor.build.security_patch=2019-10-05 \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
 

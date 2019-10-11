@@ -17,7 +17,7 @@ Mediatek ALPS
 | Camera #1 | `s5k5e2y_mipi_raw` | Yes | Yes |
 | Camera #2 | `gc2355_mipi_raw` | Yes | Yes |
 | Sensors | `MT6516` | Yes | Yes |
-| Flash | `Samsung FNX2MB` | - | Yes |
+| Flash | `Samsung FNX2MB` | Yes | Yes |
 | Lens | `DW9714AF` | Yes | Yes |
 | Sound | `mtsndcard` | Yes | Yes |
 | Accdet | `mt6580-accdet` | - | Yes |
@@ -33,7 +33,7 @@ Mediatek ALPS
 - Gapps, Anything else.
 
 # Whats Not Working:
-- Touch buttons (Only)
+- Nothing.
 
 # Credits:
 * All credits belongs to svoboda18, most thanks for Andrey and other great 4pda people.
