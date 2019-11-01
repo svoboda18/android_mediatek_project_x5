@@ -100,8 +100,8 @@ PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/sou
 PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/sound/ringtone.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/ringtone.wav:mtk
 
 # SPFT
-PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT_DIR)/../nvdata.bin
-PRODUCT_COPY_FILES += $(SPFTDIR)/nvram.bin:$(OUT_DIR)/../nvram.bin
+PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT_DIR)/nvdata.bin
+PRODUCT_COPY_FILES += $(SPFTDIR)/nvram.bin:$(OUT_DIR)/nvram.bin
 
 #Remove overlay here and move to BSP brnach
 ifeq (yes,$(strip $(MTK_GMO_ROM_OPTIMIZE)))
