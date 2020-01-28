@@ -45,7 +45,9 @@ PRODUCT_COPY_FILES += $(AUDIODIR)/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/et
 PRODUCT_COPY_FILES += frameworks/av/media/libeffects/data/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf
 
 # Media
+PRODUCT_COPY_FILES += device/mediatek/mt6580/media_profiles_mt6580p.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml:mtk
 PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
+PRODUCT_PROPERTY_OVERRIDES += ro.media.maxmem=262144000
 
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -80,13 +82,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += device/mediatek/mt6580/ACCDET.kl:system/usr/keylayout/ACCDET.kl:mtk
 PRODUCT_COPY_FILES += $(KPDDIR)/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl:mtk
 
-# Factory test
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/images/lcd_test_00.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_00.png:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/images/lcd_test_01.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_01.png:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/images/lcd_test_02.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_02.png:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/sound/testpattern1.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/testpattern1.wav:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/X5/factory/res/sound/ringtone.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/ringtone.wav:mtk
-
 # SPFT Files
 PRODUCT_COPY_FILES += $(SPFTDIR)/secro.img:$(OUT)/secro.img
 PRODUCT_COPY_FILES += $(SPFTDIR)/twrp.img:$(OUT)/twrp.img
@@ -99,13 +94,36 @@ PRODUCT_COPY_FILES += $(SPFTDIR)/preloader_hct6580_weg_c_m.bin:$(OUT)/preloader_
 # Bootanimation
 PRODUCT_COPY_FILES += $(BANIMATION)/bootanimation.zip:system/media/bootanimation.zip
 
-#Remove overlay here and move to BSP brnach
+# GO-ify
 ifeq (yes,$(strip $(MTK_GMO_ROM_OPTIMIZE)))
   DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_rom
 endif
 ifeq (yes,$(strip $(MTK_GMO_RAM_OPTIMIZE)))
   DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_ram
 endif
+
+ifeq (yes,$(strip $(MTK_GMO_RAM_OPTIMIZE)))
+# Disable fast starting window in GMO project
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.mtk_perf_fast_start_win=0
+
+# Images for LCD test in factory mode
+PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/common/factory/res/images/lcd_test_00_gmo.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_00.png:mtk
+PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/common/factory/res/images/lcd_test_01_gmo.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_01.png:mtk
+PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/common/factory/res/images/lcd_test_02_gmo.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_02.png:mtk
+
+PRODUCT_COPY_FILES += device/mediatek/common/fstab.enableswap_ago:root/fstab.enableswap
+
+PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.jit.codecachesize=0
+PRODUCT_PROPERTY_OVERRIDES += pm.dexopt.downgrade_after_inactive_days=10
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
+PRODUCT_PROPERTY_OVERRIDES += \
+      ro.lmk.medium=700 \
+      ro.lmk.critical_upgrade=true
+endif
+
+# F2FS filesystem
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_f2fs_enable=1
 
 # Common mt6580 device
 $(call inherit-product, device/mediatek/mt6580/device.mk)

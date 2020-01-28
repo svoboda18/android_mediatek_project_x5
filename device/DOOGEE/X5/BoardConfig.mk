@@ -13,6 +13,14 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # Use the project config
 include device/DOOGEE/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 
+# GO-ify
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+ifeq ($(HOST_OS),linux)
+     TARGET_USERIMAGES_USE_F2FS := true
+endif
+PRODUCT_PACKAGES += fsck.f2fs mkfs.f2fs
+MALLOC_SVELTE := true
+
 MTK_INTERNAL_CDEFS := $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)))
 MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_VALUE),$(if $(filter-out no NO none NONE false FALSE,$($(t))),$(foreach v,$(shell echo $($(t)) | tr '[a-z]' '[A-Z]'),-D$(v))))
 MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME_VALUE),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)=\"$(strip $($(t)))\"))
