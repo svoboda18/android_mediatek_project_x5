@@ -1,6 +1,9 @@
 # ProjectConfig
 include device/DOOGEE/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 
+# Common mt6580 device
+$(call inherit-product, device/mediatek/mt6580/device.mk)
+
 # Local dir(s)
 LOCAL_PATH := device/DOOGEE/X5
 OUT := $(TARGET_COPY_OUT_VENDOR)/..
@@ -51,7 +54,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.media.maxmem=262144000
 
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2019-08-05 \
+    ro.vendor.build.security_patch=2020-01-05 \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
 
@@ -64,7 +67,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Ovrride plat
 PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.mediatek.chip_ver=S01 \
-    ro.mediatek.platform=MT6580 \
+    ro.mediatek.platform=MT6580
 
 # Ovvride sim
 PRODUCT_PROPERTY_OVERRIDES +=  \
@@ -86,6 +89,7 @@ PRODUCT_COPY_FILES += $(KPDDIR)/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl:mtk
 PRODUCT_COPY_FILES += $(SPFTDIR)/secro.img:$(OUT)/secro.img
 PRODUCT_COPY_FILES += $(SPFTDIR)/twrp.img:$(OUT)/twrp.img
 PRODUCT_COPY_FILES += $(SPFTDIR)/lk.bin:$(OUT)/lk.bin
+PRODUCT_COPY_FILES += $(SPFTDIR)/5_1_lk.bin:$(OUT)/5_1_lk.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/logo.bin:$(OUT)/logo.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT)/nvdata.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/nvram.bin:$(OUT)/nvram.bin
@@ -102,31 +106,21 @@ ifeq (yes,$(strip $(MTK_GMO_RAM_OPTIMIZE)))
   DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_ram
 endif
 
-ifeq (yes,$(strip $(MTK_GMO_RAM_OPTIMIZE)))
-# Disable fast starting window in GMO project
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.mtk_perf_fast_start_win=0
-
-# Images for LCD test in factory mode
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/common/factory/res/images/lcd_test_00_gmo.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_00.png:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/common/factory/res/images/lcd_test_01_gmo.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_01.png:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/common/factory/res/images/lcd_test_02_gmo.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_02.png:mtk
-
-PRODUCT_COPY_FILES += device/mediatek/common/fstab.enableswap_ago:root/fstab.enableswap
-
-PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.jit.codecachesize=0
-PRODUCT_PROPERTY_OVERRIDES += pm.dexopt.downgrade_after_inactive_days=10
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+PRODUCT_PROPERTY_OVERRIDES += \
+     dalvik.vm.jit.codecachesize=0 \
+     dalvik.vm.foreground-heap-growth-multiplier=2.0 \
+     dalvik.vm.heapgrowthlimit=128m \
+     dalvik.vm.heapsize=256
 
 PRODUCT_PROPERTY_OVERRIDES += \
-      ro.lmk.medium=700 \
-      ro.lmk.critical_upgrade=true
-endif
+     pm.dexopt.downgrade_after_inactive_days=10 \
+     pm.dexopt.shared=quicken
 
-# F2FS filesystem
-PRODUCT_PROPERTY_OVERRIDES += ro.mtk_f2fs_enable=1
-
-# Common mt6580 device
-$(call inherit-product, device/mediatek/mt6580/device.mk)
+PRODUCT_PROPERTY_OVERRIDES += \
+     ro.mtk_f2fs_enable=1 \
+     ro.lmk.critical_upgrade=true \
+     ro.lmk.upgrade_pressure=40 \
+     ro.lmk.kill_heaviest_task=false
 
 # X5 prebuilds
 include vendor/DOOGEE/X5/prebuilds.mk

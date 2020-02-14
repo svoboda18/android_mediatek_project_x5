@@ -4,16 +4,10 @@ PRODUCT_PACKAGES += \
 
 # GAPPS apps
 GAPPS_VARIANT := pico
-DONT_DEXPREOPT_PREBUILTS := true
-GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 
 PRODUCT_PACKAGES += \
-    Chrome \
-    Wallpapers \
-    LatinImeGoogle \
-    Velvet \
-    YouTube
+    Chrome
 
 GAPPS_EXCLUDED_PACKAGES := \
     Books \
@@ -22,6 +16,7 @@ GAPPS_EXCLUDED_PACKAGES := \
     Newsstand \
     Photos \
     Street \
+    Movies \
     Videos
 
 $(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
