@@ -1,11 +1,17 @@
 # ProjectConfig
 include device/mediateksample/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 
+# MT6580
+$(call inherit-product, device/mediatek/mt6580/device.mk)
+
 # Local dir(s)
 LOCAL_PATH := device/mediateksample/k80_bsp
 ROOTDIR := $(LOCAL_PATH)/rootdir
 SPFTDIR := $(LOCAL_PATH)/spft
 BANIMATION := $(LOCAL_PATH)/bootanimation
+
+# F2FS filesystem
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_f2fs_enable=1
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -37,6 +43,11 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/android.hardware.camera.xml:$(TARGET_COPY_OU
 PRODUCT_COPY_FILES += frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf:mtk
 
+# Media
+PRODUCT_COPY_FILES += device/mediatek/mt6580/media_profiles_mt6580p.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml:mtk
+PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
+PRODUCT_PROPERTY_OVERRIDES += ro.media.maxmem=262144000
+
 # Certification
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.board=hct6580_weg_c_m \
@@ -46,19 +57,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.device=hct6580_weg_c_m \
 	ro.build.product=hct6580_weg_c_m
 
-# Performance Optimizations 
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.mtk_perf_simple_start_win=1 \
-	ro.mtk_perf_fast_start_win=1 \
-	ro.mtk_perf_response_time=1 \
-	ro.sys.fw.bg_apps_limit=10 \
-	dalvik.vm.jit.codecachesize=0 \
-	ro.config.max_starting_bg=8 \
-	config.disable_atlas=true
-
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2019-10-05 \
+    ro.vendor.build.security_patch=2020-01-05 \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
 
@@ -68,12 +69,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.service.acm.enable=0 \
     ro.mount.fs=EXT4
 
-# Ovrride plat
+# Override plat
 PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.mediatek.chip_ver=S01 \
-    ro.mediatek.platform=MT6580 \
+    ro.mediatek.platform=MT6580
 
-# Ovvride sim
+# Override sim
 PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.telephony.sim.count=2 \
     persist.radio.default.sim=0
@@ -81,9 +82,17 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 # HWUI
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.hwui.path_cache_size=0 \
-    ro.hwui.text_small_cache_width=512 \
-    ro.hwui.text_small_cache_height=256 \
     ro.hwui.disable_asset_atlas=true
+
+# AGO
+PRODUCT_PROPERTY_OVERRIDES += \
+     ro.lmk.critical_upgrade=true \
+     ro.lmk.upgrade_pressure=40 \
+     ro.lmk.kill_heaviest_task=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+     pm.dexopt.downgrade_after_inactive_days=10 \
+     pm.dexopt.shared=quicken
 
 # Keyboard layout
 PRODUCT_COPY_FILES += device/mediatek/mt6580/ACCDET.kl:system/usr/keylayout/ACCDET.kl:mtk
@@ -103,18 +112,7 @@ PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/sou
 PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT_DIR)/nvdata.bin
 PRODUCT_COPY_FILES += $(SPFTDIR)/nvram.bin:$(OUT_DIR)/nvram.bin
 
-#Remove overlay here and move to BSP brnach
-ifeq (yes,$(strip $(MTK_GMO_ROM_OPTIMIZE)))
-  DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_rom
-endif
-ifeq (yes,$(strip $(MTK_GMO_RAM_OPTIMIZE)))
-  DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_ram
-endif
-
-DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/navbar
-
-$(call inherit-product, device/mediatek/mt6580/device.mk)
-
+# Gapps
 include vendor/bsp/prebuilds.mk
 
 $(call inherit-product-if-exists, vendor/mediatek/libs/$(MTK_TARGET_PROJECT)/device-vendor.mk)

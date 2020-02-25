@@ -304,7 +304,6 @@ static void lcm_init(void)
 
 static void lcm_suspend(void)
 {
-#ifndef BUILD_LK
 	SET_RESET_PIN(1);  //NOTE:should reset LCM firstly
 	MDELAY(10);
 	SET_RESET_PIN(0);
@@ -312,16 +311,12 @@ static void lcm_suspend(void)
 	SET_RESET_PIN(1);
 	MDELAY(120);
 	push_table(lcm_deep_sleep_mode_in_setting, sizeof(lcm_deep_sleep_mode_in_setting) / sizeof(struct LCM_setting_table), 1);//wqtao. enable
-#endif
 }
 
 
 static void lcm_resume(void)
 {
-#ifndef BUILD_LK
-//        lcm_compare_id();
 	lcm_init();
-#endif
 }
 
 

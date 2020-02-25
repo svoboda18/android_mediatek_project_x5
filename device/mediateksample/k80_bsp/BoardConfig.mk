@@ -6,12 +6,18 @@ TARGET_BOARD_PLATFORM := mt6580
 # Use the 6580 common part
 include device/mediatek/mt6580/BoardConfig.mk
 
+# Use the 6580 AGO part
+include device/mediatek/common/ago/BoardConfig.mk
+
 #Config partition size
 -include $(MTK_PTGEN_OUT)/partition_size.mk
 ifneq ($(strip $(MTK_AB_OTA_UPDATER)), yes)
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 endif
+
+# F2FS
 BOARD_FLASH_BLOCK_SIZE := 4096
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediateksample/k80_bsp/bluetooth
 

@@ -4,22 +4,17 @@ PRODUCT_PACKAGES += \
 
 # GAPPS apps
 GAPPS_VARIANT := pico
-GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 
 PRODUCT_PACKAGES += \
-    Chrome \
-    Wallpapers \
-    LatinImeGoogle \
-    Vevelt \
-    YouTube
-
+    Chrome
 GAPPS_EXCLUDED_PACKAGES := \
     Books \
     Hangouts \
     Music2 \
     Newsstand \
     Photos \
+    Movies \
     Street \
     Videos
 
