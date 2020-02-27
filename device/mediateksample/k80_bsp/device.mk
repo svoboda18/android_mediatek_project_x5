@@ -10,9 +10,6 @@ ROOTDIR := $(LOCAL_PATH)/rootdir
 SPFTDIR := $(LOCAL_PATH)/spft
 BANIMATION := $(LOCAL_PATH)/bootanimation
 
-# F2FS filesystem
-PRODUCT_PROPERTY_OVERRIDES += ro.mtk_f2fs_enable=1
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/sd_in_ex_otg

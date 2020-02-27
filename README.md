@@ -33,7 +33,7 @@ Mediatek ALPS
 - Gapps, Anything else.
 
 # Whats Not Working:
-- Nothing.
+- Touch buttons. (if you can fix it/have an idea, contact me)
 
 # Credits:
 * All credits belongs to svoboda18, most thanks for Andrey and other great 4pda people.

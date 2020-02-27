@@ -16,7 +16,7 @@
 
 # Provides dependencies necessary for verified boot.
 
-PRODUCT_SUPPORTS_BOOT_SIGNER := true
+PRODUCT_SUPPORTS_BOOT_SIGNER := false
 PRODUCT_SUPPORTS_VERITY := false
 PRODUCT_SUPPORTS_VERITY_FEC := false
 

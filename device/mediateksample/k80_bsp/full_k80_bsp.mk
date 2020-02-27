@@ -1,3 +1,6 @@
+# include this too
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
 # Set target and base project for flavor build
 MTK_TARGET_PROJECT := $(subst full_,,$(TARGET_PRODUCT))
 MTK_BASE_PROJECT := $(MTK_TARGET_PROJECT)
