@@ -15,6 +15,15 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/sd_in_ex_otg
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/navbar
 
+# Certification
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.product.board=hct6580_weg_c_m \
+	ro.product.vendor.name=full_hct6580_weg_c_m \
+	ro.product.vendor.device=hct6580_weg_c_m \
+	ro.product.name=full_hct6580_weg_c_m \
+	ro.product.device=hct6580_weg_c_m \
+	ro.build.product=hct6580_weg_c_m
+
 # X5 project rootdir
 PRODUCT_COPY_FILES += $(ROOTDIR)/factory_init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/factory_init.project.rc
 PRODUCT_COPY_FILES += $(ROOTDIR)/init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.project.rc
@@ -45,20 +54,20 @@ PRODUCT_COPY_FILES += device/mediatek/mt6580/media_profiles_mt6580p.xml:$(TARGET
 PRODUCT_PROPERTY_OVERRIDES += media.settings.xml=/vendor/etc/media_profiles.xml
 PRODUCT_PROPERTY_OVERRIDES += ro.media.maxmem=262144000
 
-# Certification
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.product.board=hct6580_weg_c_m \
-	ro.product.vendor.name=full_hct6580_weg_c_m \
-	ro.product.vendor.device=hct6580_weg_c_m \
-	ro.product.name=full_hct6580_weg_c_m \
-	ro.product.device=hct6580_weg_c_m \
-	ro.build.product=hct6580_weg_c_m
-
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2020-01-05 \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
+
+# Performance Optimizations 
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.mtk_perf_fast_start_win=1 \
+	ro.mtk_perf_response_time=1 \
+	ro.sys.fw.bg_apps_limit=10 \
+	dalvik.vm.jit.codecachesize=0 \
+	ro.config.max_starting_bg=8 \
+	config.disable_atlas=true
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -75,21 +84,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.telephony.sim.count=2 \
     persist.radio.default.sim=0
-
-# HWUI
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.hwui.path_cache_size=0 \
-    ro.hwui.disable_asset_atlas=true
-
-# AGO
-PRODUCT_PROPERTY_OVERRIDES += \
-     ro.lmk.critical_upgrade=true \
-     ro.lmk.upgrade_pressure=40 \
-     ro.lmk.kill_heaviest_task=false
-
-PRODUCT_PROPERTY_OVERRIDES += \
-     pm.dexopt.downgrade_after_inactive_days=10 \
-     pm.dexopt.shared=quicken
 
 # Keyboard layout
 PRODUCT_COPY_FILES += device/mediatek/mt6580/ACCDET.kl:system/usr/keylayout/ACCDET.kl:mtk

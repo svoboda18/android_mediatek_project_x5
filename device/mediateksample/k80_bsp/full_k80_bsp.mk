@@ -1,5 +1,6 @@
 # include this too
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 
 # Set target and base project for flavor build
 MTK_TARGET_PROJECT := $(subst full_,,$(TARGET_PRODUCT))
@@ -13,12 +14,6 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 # ProjectConfig
 include $(LOCAL_PATH)/ProjectConfig.mk
 
-# A-GO
-$(call inherit-product, device/mediatek/common/ago/device.mk)
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-PRODUCT_DISABLE_SCUDO := true
-
 # Set those variables here to overwrite the inherited values.
 PRODUCT_MANUFACTURER := DOOGEE
 PRODUCT_NAME := full_k80_bsp
@@ -27,7 +22,10 @@ PRODUCT_MODEL := X5
 PRODUCT_POLICY := android.policy_phone
 PRODUCT_BRAND := DOOGEE
 
-BUILD_FINGERPRINT := DOOGEE/full_hct6580_weg_c_m/hct6580_weg_c_m:6.0/MRA58K/1472705112:user/test-keys
+BUILD_FINGERPRINT := "DOOGEE/full_hct6580_weg_c_m/hct6580_weg_c_m:6.0/MRA58K/1472705112:user/test-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += \
+	PRODUCT_NAME="full_hct6580_weg_c_m" \
+        TARGET_DEVICE="hct6580_weg_c_m"
 PRODUCT_DEFAULT_LOCALE := en_US
 
 KERNEL_DEFCONFIG ?= blackghost_defconfig
