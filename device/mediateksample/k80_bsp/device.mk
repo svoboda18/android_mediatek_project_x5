@@ -56,7 +56,6 @@ PRODUCT_PROPERTY_OVERRIDES += ro.media.maxmem=262144000
 
 # Vendor override props
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2020-01-05 \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
 

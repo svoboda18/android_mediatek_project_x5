@@ -1,6 +1,6 @@
 # include this too
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Set target and base project for flavor build
 MTK_TARGET_PROJECT := $(subst full_,,$(TARGET_PRODUCT))
@@ -23,9 +23,6 @@ PRODUCT_POLICY := android.policy_phone
 PRODUCT_BRAND := DOOGEE
 
 BUILD_FINGERPRINT := "DOOGEE/full_hct6580_weg_c_m/hct6580_weg_c_m:6.0/MRA58K/1472705112:user/test-keys"
-PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRODUCT_NAME="full_hct6580_weg_c_m" \
-        TARGET_DEVICE="hct6580_weg_c_m"
 PRODUCT_DEFAULT_LOCALE := en_US
 
 KERNEL_DEFCONFIG ?= blackghost_defconfig
