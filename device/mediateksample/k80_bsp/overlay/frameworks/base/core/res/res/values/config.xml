@@ -17,6 +17,7 @@
     <bool name="skip_restoring_network_selection">true</bool>
     <bool name="config_showNavigationBar">true</bool>
     <bool name="config_enableWifiDisplay">true</bool>
+    <bool name="config_setColorTransformAccelerated">true</bool>
     <bool name="config_nightDisplayAvailable">true</bool>
     <bool name="config_enableAutoPowerModes">true</bool>
     <bool name="config_autoPowerModePrefetchLocation">true</bool>

@@ -131,9 +131,5 @@ TARGET_FS_CONFIG_GEN += device/mediatek/mt6580/config.fs
 
 BOARD_SIGN_IMG = false
 
-ifneq ($(wildcard vendor/mediatek/internal/sboot_disable),)
 BOARD_BUILD_SBOOT_DIS_PL:=yes
-else
-BOARD_BUILD_SBOOT_DIS_PL:=no
-endif
 

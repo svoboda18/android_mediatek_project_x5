@@ -142,9 +142,16 @@ typedef enum
     AUDIO_MIC_MODE_DCCECMSINGLE = 6,
 } AUDIO_MIC_MODE;
 *****************************************************/
+#ifdef PHONE_MIC_MODE
+#undef PHONE_MIC_MODE
+#endif
 #define PHONE_MIC_MODE (1)
+#ifdef HEADSET_MIC_MODE
+#undef HEADSET_MIC_MODE
+#endif
 #define HEADSET_MIC_MODE (1)
-//#define MAIN_REF_MIC_INVERSE 0
+
 #define USING_EXTAMP_HP
+
 #endif
 
