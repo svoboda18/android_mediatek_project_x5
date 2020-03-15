@@ -4008,12 +4008,10 @@ MTK_AVB_IMG_RELEASE_AUTH = yes
 
 # setup dm-verity configs.
 MAIN_VBMETA_IN_BOOT := no
-BOARD_AVB_ENABLE ?= false
+BOARD_AVB_ENABLE ?= true
 
 ifeq ($(strip $(BOARD_AVB_ENABLE)),true)
 ifeq (-4.9,$(findstring -4.9,$(LINUX_KERNEL_VERSION)))
-    BOARD_AVB_ENABLE := true
-
     # Migrate vboot1.0 to avb2.0 for Android P Treble system-as-root feature
     # Only need to set MAIN_VBMETA_IN_BOOT as true for O OTA to P project which is kernel-4.9/kernel-4.14 and does not enable avb2.0 in O
     ifneq ($(call math_lt,$(PRODUCT_SHIPPING_API_LEVEL),28),)
@@ -4025,8 +4023,6 @@ ifeq (-4.9,$(findstring -4.9,$(LINUX_KERNEL_VERSION)))
         endif
     endif
 else ifeq (-4.14,$(findstring -4.14,$(LINUX_KERNEL_VERSION)))
-    BOARD_AVB_ENABLE := true
-
     # Migrate vboot1.0 to avb2.0 for Android P Treble system-as-root feature
     # Only need to set MAIN_VBMETA_IN_BOOT as true for O OTA to P project which is kernel-4.9/kernel-4.14 and does not enable avb2.0 in O
     ifneq ($(call math_lt,$(PRODUCT_SHIPPING_API_LEVEL),28),)
