@@ -131,5 +131,5 @@ TARGET_FS_CONFIG_GEN += device/mediatek/mt6580/config.fs
 
 BOARD_SIGN_IMG = false
 
-BOARD_BUILD_SBOOT_DIS_PL:=yes
+BOARD_BUILD_SBOOT_DIS_PL:=false
 
