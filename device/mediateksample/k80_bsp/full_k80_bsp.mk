@@ -1,9 +1,6 @@
 # include this too
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Oreo (mr1) shipped, make sure full treble is present.
-PRODUCT_SHIPPING_API_LEVEL_OVERRIDE := 27
-
 # This is where we'd set a backup provider if we had one
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 

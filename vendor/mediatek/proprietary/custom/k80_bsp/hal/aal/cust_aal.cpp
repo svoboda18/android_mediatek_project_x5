@@ -14,21 +14,29 @@ float LcmGamma[] = { 2.2 };
 //  Behavior configuration
 // --------------------------------------------------------------------------
 
-// The enhancement level of DRE for sunlight in [0, 255]
-// Larger value means stronger
+// The default brightness of auto backlight in [0, 255]
+// Larger value means DARKER
 // Supports multiple LCM. The number of elements must equal to LCM_COUNT.
-int ReadabilityLevel[] = { 207 };
+int BrightnessLevel[] = { 128 };
 
-// The enhancement level of DRE for low backlight in [0, 255]
+// Brightening speed of auto backlight in [0, 255]
+// Larger value means faster
+int BrighteningSpeedLevel = 128;
+
+// Darkening speed of auto backlight in [0, 255]
+// Larger value means faster
+int DarkeningSpeedLevel = 13;
+
+// The enhancement level of DRE in [0, 255]
 // Larger value means stronger
 // Supports multiple LCM. The number of elements must equal to LCM_COUNT.
-int LowBLReadabilityLevel[] = { 128 };
+int ReadabilityLevel[] = { 128 };
 
 // Strength of Content-adaptive backlight control
 // In [0, 255]
 // This function could intelligently reduce backlight to save power according to content.
 // The larger SmartBacklightStrength value, the more power saving.
-// However, the excessive large value may degrade image¡¦s brightness.
+// However, the excessive large value may degrade images brightness. 
 // Supports multiple LCM. The number of elements must equal to LCM_COUNT.
 int SmartBacklightStrength[] = { 128 };
 
@@ -43,9 +51,10 @@ int SmartBacklightRange[] = { 128 };
 // Minimum backlight value of AAL output
 // In [0, 1023]
 // Supports multiple LCM. The number of elements must equal to LCM_COUNT.
+#if defined(MTK_ULTRA_DIMMING_SUPPORT)
+int MinOutBL[] = { 32 };
+#else
 int MinOutBL[] = { 0 };
+#endif
 
-// Default use ESS only
-int InitFunction = 2;
 }
-
