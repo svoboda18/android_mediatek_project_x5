@@ -1,7 +1,7 @@
 TARGET_BOARD_PLATFORM := mt6580
 
 # Use the non-open-source part, if present
--include vendor/mediatek/k80_bsp/BoardConfigVendor.mk
+-include vendor/mediatek/X5/BoardConfigVendor.mk
 
 # Use the 6580 common part
 include device/mediatek/mt6580/BoardConfig.mk

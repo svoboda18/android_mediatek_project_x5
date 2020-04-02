@@ -5,7 +5,7 @@ include device/mediateksample/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 $(call inherit-product, device/mediatek/mt6580/device.mk)
 
 # Local dir(s)
-LOCAL_PATH := device/mediateksample/k80_bsp
+LOCAL_PATH := device/DOOGEE/X5
 ROOTDIR := $(LOCAL_PATH)/rootdir
 SPFTDIR := $(LOCAL_PATH)/spft
 BANIMATION := $(LOCAL_PATH)/bootanimation
@@ -14,15 +14,6 @@ BANIMATION := $(LOCAL_PATH)/bootanimation
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/sd_in_ex_otg
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/navbar
-
-# Certification
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.product.board=hct6580_weg_c_m \
-	ro.product.vendor.name=full_hct6580_weg_c_m \
-	ro.product.vendor.device=hct6580_weg_c_m \
-	ro.product.name=full_hct6580_weg_c_m \
-	ro.product.device=hct6580_weg_c_m \
-	ro.build.product=hct6580_weg_c_m
 
 # X5 project rootdir
 PRODUCT_COPY_FILES += $(ROOTDIR)/factory_init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/factory_init.project.rc
@@ -61,7 +52,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Performance Optimizations 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.mtk_perf_fast_start_win=1 \
 	ro.mtk_perf_response_time=1 \
 	ro.sys.fw.bg_apps_limit=10 \
 	dalvik.vm.jit.codecachesize=0 \
@@ -90,13 +80,6 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl:m
 
 # Bootanimation
 PRODUCT_COPY_FILES += $(BANIMATION)/bootanimation.zip:system/media/bootanimation.zip
-
-# Factory test
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/images/lcd_test_00.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_00.png:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/images/lcd_test_01.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_01.png:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/images/lcd_test_02.png:$(TARGET_COPY_OUT_VENDOR)/res/images/lcd_test_02.png:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/sound/testpattern1.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/testpattern1.wav:mtk
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/k80_bsp/factory/res/sound/ringtone.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/ringtone.wav:mtk
 
 # SPFT
 PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT_DIR)/nvdata.bin

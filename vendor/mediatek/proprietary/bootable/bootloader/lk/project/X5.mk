@@ -1,5 +1,5 @@
 LOCAL_DIR := $(GET_LOCAL_DIR)
-TARGET := k80_bsp
+TARGET := X5
 MODULES += app/mt_boot \
            dev/lcm
 MTK_EMMC_SUPPORT = yes

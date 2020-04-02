@@ -1,4 +1,3 @@
-
 extern "C" {
 
 // The LCM number which this project can support
@@ -13,19 +12,6 @@ float LcmGamma[] = { 2.2 };
 // --------------------------------------------------------------------------
 //  Behavior configuration
 // --------------------------------------------------------------------------
-
-// The default brightness of auto backlight in [0, 255]
-// Larger value means DARKER
-// Supports multiple LCM. The number of elements must equal to LCM_COUNT.
-int BrightnessLevel[] = { 128 };
-
-// Brightening speed of auto backlight in [0, 255]
-// Larger value means faster
-int BrighteningSpeedLevel = 128;
-
-// Darkening speed of auto backlight in [0, 255]
-// Larger value means faster
-int DarkeningSpeedLevel = 13;
 
 // The enhancement level of DRE in [0, 255]
 // Larger value means stronger
@@ -56,5 +42,4 @@ int MinOutBL[] = { 32 };
 #else
 int MinOutBL[] = { 0 };
 #endif
-
 }
