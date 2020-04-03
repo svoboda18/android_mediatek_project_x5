@@ -19,7 +19,7 @@ endif
 BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediateksample/k80_bsp/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/DOOGEE/X5/bluetooth
 
 MTK_INTERNAL_CDEFS := $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)))
 MTK_INTERNAL_CDEFS += $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_VALUE),$(if $(filter-out no NO none NONE false FALSE,$($(t))),$(foreach v,$(shell echo $($(t)) | tr '[a-z]' '[A-Z]'),-D$(v))))
