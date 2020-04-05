@@ -3,7 +3,7 @@ Mediatek ALPS
 - This repo, contains files that are need to be used in order to correctly collect the mediatek alps
   for **DOOGEE X5** device.
 
-# X5 Speces:
+## X5 Speces:
 - MT6580 Chipset
 - Shipped With Lollipop 5.1
 - 5,0" 1280x720 display
@@ -22,7 +22,7 @@ Mediatek ALPS
 | Sound | `mtsndcard` | Yes | Yes |
 | Accdet | `mt6580-accdet` | - | Yes |
 
-# Whats Working:
+## Whats Working:
 - Boots.
 - Cameras (8/5 MP), Video Capture, Auto-focus, Flashlight (all modes)
 - HW Composer/ Graphics.
@@ -32,8 +32,8 @@ Mediatek ALPS
 - Sim Cards, FM Radio.
 - Gapps, Anything else.
 
-# Whats Not Working:
+## Whats Not Working:
 - N/A
 
-# Credits:
-* All credits belongs to svoboda18, most thanks for Andrey and other great 4pda people.
+## Credits:
+* All credits goes to the author (@svoboda18), most thanks for Andrey and other great 4pda people for references.
