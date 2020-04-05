@@ -30,6 +30,10 @@ on post-fs-data
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
+    # DT2W
+    chmod 0666 /sys/devices/platform/bus/1100a000.i2c/i2c-1/1-0038/fts_gesture_mode
+    chown system system /sys/devices/platform/bus/1100a000.i2c/i2c-1/1-0038/fts_gesture_mode
+
 on boot
 service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
 	user root

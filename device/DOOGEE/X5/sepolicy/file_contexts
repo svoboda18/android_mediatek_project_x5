@@ -1,0 +1,6 @@
+#########################################
+# Device dependent label definitions
+#########################################
+
+# DT2W
+/sys/devices/platform/bus/1100a000\.i2c/i2c-1/1-0038/fts_gesture_mode u:object_r:sysfs_fts:s0
