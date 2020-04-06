@@ -4063,13 +4063,6 @@ endif
     BOARD_AVB_SYSTEM_ALGORITHM := SHA256_RSA2048
     BOARD_AVB_SYSTEM_ROLLBACK_INDEX := 0
     BOARD_AVB_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
-
-else
-    # if avb2.0 is not enabled
-    $(call inherit-product, build/target/product/verity.mk)
-
-    PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/bootdevice/by-name/system
-    PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/bootdevice/by-name/vendif
 endif
 
 # kernel doesn't have HEH filename encryption
