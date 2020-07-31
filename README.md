@@ -11,7 +11,7 @@ Mediatek ALPS
 - 1GB RAM / 8GB ROM
 
 ## Known information:
-| Subsystem | Driver name | Availability | Working |
+| Subsystem | Driver name | Availability | Working | 
 |-----------|-------------|--------------|---------|
 | GPU | `Mali-400 MP2` | Yes | Yes |
 | Camera #1 | `s5k5e2y_mipi_raw` | Yes | Yes |
@@ -22,7 +22,7 @@ Mediatek ALPS
 | Sound | `mtsndcard` | Yes | Yes |
 | Accdet | `mt6580-accdet` | - | Yes |
 
-## Whats Working:
+## Whats working:
 - Boots.
 - Cameras (8/5 MP), Video Capture, Auto-focus, Flashlight (all modes)
 - HW Composer/ Graphics.
@@ -32,7 +32,7 @@ Mediatek ALPS
 - Sim Cards, FM Radio.
 - Gapps, Anything else.
 
-## Whats Not Working:
+## Whats not working:
 - N/A
 
 ## Credits:
