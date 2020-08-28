@@ -52,11 +52,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Performance Optimizations 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.mtk_perf_response_time=1 \
-	ro.sys.fw.bg_apps_limit=10 \
-	dalvik.vm.jit.codecachesize=0 \
-	ro.config.max_starting_bg=8 \
-	config.disable_atlas=true
+    dalvik.vm.jit.codecachesize=0 \
+    config.disable_atlas=true
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

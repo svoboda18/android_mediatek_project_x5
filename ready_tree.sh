@@ -5,7 +5,7 @@ read
 
 [ ! -f build/envsetup.sh ] && exit
 
-[ ! -d device/DOOGEE/X5 ] && {
+[ ! -f device/DOOGEE/X5/AndroidProducts.mk ] && {
 	echo "> [TREE][GEN] Cloning project for X5 target"
 	perl vendor/mediatek/prop*/scripts/project_clone/project_clone.pl -p "$(pwd)" -o "mediateksample/k80_bsp" -n "DOOGEE/X5"
 }
