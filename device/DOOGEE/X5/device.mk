@@ -7,7 +7,6 @@ $(call inherit-product, device/mediatek/mt6580/device.mk)
 # Local dir(s)
 LOCAL_PATH := device/DOOGEE/X5
 ROOTDIR := $(LOCAL_PATH)/rootdir
-SPFTDIR := $(LOCAL_PATH)/spft
 BANIMATION := $(LOCAL_PATH)/bootanimation
 
 # Overlays
@@ -77,10 +76,6 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl:m
 
 # Bootanimation
 PRODUCT_COPY_FILES += $(BANIMATION)/bootanimation.zip:system/media/bootanimation.zip
-
-# SPFT
-PRODUCT_COPY_FILES += $(SPFTDIR)/nvdata.bin:$(OUT_DIR)/nvdata.bin
-PRODUCT_COPY_FILES += $(SPFTDIR)/nvram.bin:$(OUT_DIR)/nvram.bin
 
 # Gapps
 include vendor/bsp/prebuilds.mk

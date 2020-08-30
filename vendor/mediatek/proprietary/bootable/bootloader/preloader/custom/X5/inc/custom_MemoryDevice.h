@@ -105,7 +105,7 @@
 #define BOARD_ID                MT6580_EVB
 
 // DDR3
-#define CS_PART_NUMBER[0]      H8G1e_DDR2 //DDR3?
+#define CS_PART_NUMBER[0]      H8G1e_DDR3
 #define CS_PART_NUMBER[1]      FNX2MB
 #define CS_PART_NUMBER[2]      H8G4
 #define CS_PART_NUMBER[3]      F722MB
