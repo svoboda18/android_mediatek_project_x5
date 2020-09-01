@@ -30,7 +30,19 @@ Mediatek ALPS
 - Touch screen/HW buttons, Rotation, Proximity/Light sensors.
 - Audio, Microphone.
 - Sim Cards, FM Radio.
-- Gapps, Anything else.
+- System is smooth and reliable
+- Gapps (GO), Anything else.
+
+## Build process:
+* Clone this repo, by running:
+`git clone https://github.com/svoboda18/android_mediatek_project_x5 -b pie ~/project_x5`
+* Navigate to alps 9.0 directory, and then execute:
+`bash ~/project_x5/ready_tree.sh`
+* You may now extract your GMSExpress in `vendor/google`, to have gapps included.
+* Make sure to have Blackghost kernel cloned in `kernel-4.9-lc` folder.
+* Setup the android build env., lunch X5 target and finnaly start the build by:
+`make`
+  - When building process is done, `out/*/*/X5` will contain all required files for a firmware release.
 
 ## Whats not working:
 - N/A

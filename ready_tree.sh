@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "> [TREE][GEN] Ready Tree Started" ; sleep 0.2
 echo "> [TOOL] Must be run on top of alps directory"
-read
+sleep 1.5
 
 [ ! -f build/envsetup.sh ] && exit
 
