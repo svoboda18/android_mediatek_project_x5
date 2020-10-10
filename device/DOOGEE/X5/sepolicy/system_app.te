@@ -1,0 +1,3 @@
+r_dir_file(system_app, sysfs_fts)
+allow system_app sysfs_fts:file read;
+allow system_app sysfs_fts:file write;
