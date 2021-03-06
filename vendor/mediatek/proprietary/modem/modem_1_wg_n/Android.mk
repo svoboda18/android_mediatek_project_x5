@@ -1,3 +1,4 @@
+
 LOCAL_PATH := $(call my-dir)
 MTK_MODEM_LOCAL_PATH := $(LOCAL_PATH)
 MTK_MODEM_MDDB_FILES :=
@@ -96,8 +97,7 @@ $(foreach item,$(MTK_MODEM_FIRMWARE_FILES),$(eval $(call mtk-install-modem,$(ite
 $(foreach item,$(MTK_MODEM_VENDOR_FIRMWARE_FILES),$(eval $(call mtk-install-modem,$(item),$(TARGET_OUT_VENDOR)/firmware)))
 $(foreach item,$(MTK_MODEM_MDDB_FILES),$(eval $(call mtk-install-modem,$(item),$(TARGET_OUT_VENDOR_ETC)/mddb)))
 $(foreach item,$(MTK_MODEM_PARTITION_FILES),$(eval $(call mtk-install-modem,$(item),$(PRODUCT_OUT))))
-
-ifeq ($(strip $(MTK_MODEM_APPS_INCLUDE_FIRST)),yes)
+ifneq ($(strip $(MTK_MODEM_APPS_INCLUDE_FIRST)),yes)
 include $(sort $(wildcard $(LOCAL_PATH)/makefile/inst_*.mk))
 MTK_MODEM_APPS_INCLUDE_FIRST := yes
 endif

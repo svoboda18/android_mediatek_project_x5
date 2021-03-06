@@ -33,7 +33,7 @@
 #
 # *************************************************************************
 
-# Generated at 2019-11-12 16:48:00
+# Generated at 2020-09-29 14:30:35
 
 # ------------------------------ Modem specification
 MODEM_SPEC = MTK_MODEM_3G_WCDMA
@@ -262,8 +262,8 @@ RF_MODULE = MT6580RF_2G_CUSTOM
 UMTS_RF_MODULE = CUSTOM_MT6580RF_UMTS_FDD
 
 # ------------------------------ Verno information
-VERNO = MOLY.WR8.W1449.MD.WG.MP.V294.3
-BUILD = BUILD_NO
+VERNO = MOLY.WR8.W1449.MD.WG.MP.V316
+BUILD = SVOBODA18
 BRANCH = WR8.W1449.MD.WG.MP
 # ------------------------------ System configurations
 PLATFORM = MT6580
@@ -316,7 +316,7 @@ PROJECT_MAKEFILE_EXT = BIRD_Q0MP1_K80_BSP_HSPA_EXT
 #
 # *************************************************************************
 
-# Generated at 2019-11-12 16:48:00
+# Generated at 2020-09-29 14:30:35
 
 
 # =========================================================================
@@ -383,7 +383,7 @@ MTK_BT_CHIP = MTK_CONSYS_MT6580
   # Switch-ability:
   #   Switchable
 
-ORIGINAL_VERNO = MOLY.WR8.W1449.MD.WG.MP.V294.3
+ORIGINAL_VERNO = MOLY.WR8.W1449.MD.WG.MP.V316
 
 RF_DRDI_CAPABILITY_SUPPORT = TRUE
   # Description:
