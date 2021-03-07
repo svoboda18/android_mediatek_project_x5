@@ -1,6 +1,6 @@
 #!/bin/bash
 function print {
-	echo $@
+	echo -e "$@"
 	sleep 0.4
 }
 
@@ -12,6 +12,9 @@ sleep 1.5
 [ ! -d device/mediateksample ] && exit
 
 [ ! -f device/DOOGEE/X5/AndroidProducts.mk ] && {
+	print "[TREE] [PATCH] Applying soong patch (one-time)"
+	patch -b -p1 -i $(dirname "$0")/patches/soong.patch
+
 	print "[TREE] [GEN] Cloning project for X5 target"
 	perl vendor/mediatek/prop*/scripts/project_clone/project_clone.pl -p "$(pwd)" -o "mediateksample/k80hd_bsp_fwv_512m" -n "DOOGEE/X5"
 }
@@ -22,7 +25,7 @@ cp -r "$(dirname "$0")"/* .
 # currently, keep avb20 from lk/ def dtbo
 LK_RULES_MT6580="vendor/mediatek/proprietary/bootable/bootloader/lk/platform/mt6580/rules.mk"
 [ ! -f $LK_RULES_MT6580.bkp ] && {
-	print "[TREE] [LK] Disabling avb20 and enabling dtbo"
+	print "[TREE] [LK] Enabling dtbo"
 	cp $LK_RULES_MT6580 $LK_RULES_MT6580.bkp
 	sed -e "s@MTK_AVB20_SUPPORT:=yes@MTK_AVB20_SUPPORT:=yes\nDEFINES += MTK_DTBO_FEATURE@" \
 	    -i $LK_RULES_MT6580
@@ -45,6 +48,9 @@ LK_RULES_MT6580="vendor/mediatek/proprietary/bootable/bootloader/lk/platform/mt6
 			"$CERTS_HEADER" rsa \
 			>/dev/null 2>&1
 	done
+
+	mkdir -p device/mediatek/security/X5
+	ln -s device/DOOGEE/X5/security/* device/mediatek/security/X5
 
 	sed "s@PRODUCT_VERITY_SIGNING_KEY :=.*@PRODUCT_VERITY_SIGNING_KEY := device/DOOGEE/X5/security/verity@" \
 		-i build/make/target/product/verity.mk
