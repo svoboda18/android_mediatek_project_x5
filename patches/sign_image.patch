@@ -1,0 +1,15 @@
+--- a/device/mediatek/build/tasks/sign_image.mk	2021-03-21 15:39:39.979469476 +0000
++++ b/device/mediatek/build/tasks/sign_image.mk	2021-03-21 15:53:42.079267684 +0000
+@@ -44,6 +44,7 @@
+ 
+ intermediates := $(call intermediates-dir-for,PACKAGING,mtk_signed_image)
+ 
++ifeq (yes,$(BOARD_SIGN_IMG))
+ ifneq (,$(IMAGE_LIST_TXT))
+ $(foreach IMAGE_PAIR,$(IMAGE_LIST), \
+   $(eval IMAGE_NAME := $(word 1,$(subst =, ,$(IMAGE_PAIR)))) \
+@@ -136,3 +137,4 @@
+ sign-image-nodeps: $(update_modem_depend_targets)
+ sign-image-nodeps: $(filter-out $(TARGET_OUT)/% $(TARGET_OUT_VENDOR)/%,$(MTK_MODEM_INSTALLED_MODULES))
+ endif
++endif

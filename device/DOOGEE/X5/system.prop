@@ -20,9 +20,6 @@ ro.sys.usb.storage.type=mtp
 ro.sys.usb.bicr=no
 ro.sys.usb.charging.only=yes
 
-# Power off opt in IPO
-sys.ipo.pwrdncap=2
-
 # audio
 ro.camera.sound.forced=0
 ro.audio.silent=0

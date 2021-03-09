@@ -1,6 +1,6 @@
 #!/bin/bash
 function print {
-	echo -e "$@"
+	echo "$@"
 	sleep 0.4
 }
 
@@ -11,9 +11,17 @@ sleep 1.5
 [ ! -f build/envsetup.sh ] && exit
 [ ! -d device/mediateksample ] && exit
 
+[ "$(dirname `realpath "$0"`)" = "$(pwd)"  ] && {
+	print -e "\n[ERROR] Calling from the inside of alps directory?"
+	exit 1
+}
+
 [ ! -f device/DOOGEE/X5/AndroidProducts.mk ] && {
 	print "[TREE] [PATCH] Applying soong patch (one-time)"
 	patch -b -p1 -i $(dirname "$0")/patches/soong.patch
+
+	print "[TREE] [PATCH] Applying sign task patch (one-time)"
+	patch -b -p1 -i $(dirname "$0")/patches/sign_image.patch
 
 	print "[TREE] [GEN] Cloning project for X5 target"
 	perl vendor/mediatek/prop*/scripts/project_clone/project_clone.pl -p "$(pwd)" -o "mediateksample/k80hd_bsp_fwv_512m" -n "DOOGEE/X5"
@@ -51,6 +59,10 @@ LK_RULES_MT6580="vendor/mediatek/proprietary/bootable/bootloader/lk/platform/mt6
 
 	mkdir -p device/mediatek/security/X5
 	ln -s device/DOOGEE/X5/security/* device/mediatek/security/X5
+
+	pushd device/mediatek
+	grep -rlI --include=*.mk MAINLINE_SEPOLICY | xargs sed -i "s@MAINLINE_SEPOLICY_DEV_CERTIFICATES :=.*@MAINLINE_SEPOLICY_DEV_CERTIFICATES := device/DOOGEE/X5/security@"
+	popd
 
 	sed "s@PRODUCT_VERITY_SIGNING_KEY :=.*@PRODUCT_VERITY_SIGNING_KEY := device/DOOGEE/X5/security/verity@" \
 		-i build/make/target/product/verity.mk

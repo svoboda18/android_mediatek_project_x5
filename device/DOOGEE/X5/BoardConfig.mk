@@ -13,7 +13,7 @@ endif
 # Override
 # dont set BOARD_BUILD_SYSTEM_ROOT_IMAGE := true while DYNAMIC_PARTITION_SUPPORT=yes
 # dont set BOARD_AVB_ENABLE := false while DYNAMIC_PARTITION_SUPPORT=yes
-# BOARD_SIGN_IMG := no follows
+BOARD_SIGN_IMG := no
 
 # F2FS
 BOARD_FLASH_BLOCK_SIZE := 4096

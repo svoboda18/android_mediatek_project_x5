@@ -41,11 +41,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     qemu.hw.mainkeys=1 \
     ro.sf.lcd_density=320
 
-# Performance Optimizations 
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.jit.codecachesize=0 \
-    config.disable_atlas=true
-
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp \

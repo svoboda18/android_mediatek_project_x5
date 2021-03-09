@@ -1,7 +1,6 @@
 Mediatek ALPS
 =================
-- This repo, contains files that are need to be used in order to correctly collect the mediatek alps
-  for **DOOGEE X5** device.
+- This repo, contains files that are need to be used in order to correctly collect the mediatek alps for **DOOGEE X5** device. You can change branches for desired Android version.
 
 ## X5 Speces:
 - MT6580 Chipset
@@ -33,10 +32,10 @@ Mediatek ALPS
 * You may now extract your GMSExpress in `vendor/google`, to have gapps included.
 * Make sure to have Blackghost kernel cloned in `kernel-4.9-lc` folder.
 * Setup the android build environment start the build.
-* For split build: (note: make commend will take time depends on your machine)
-   - `export OUT_DIR=out_sys && lunch sys_mssi_32_ww_armv7-user && make sys_images`
-   - `export OUT_DIR=out && lunch vnd_X5-user && make vnd_images krn_images`
-   - Finnaly, we merge all files/folders into one, `out/*/*/X5/merged` will contain all required files for a firmware release.
+   * For split build: (note: make command will take time depends on your machine)
+	- `export OUT_DIR=out_sys && lunch sys_mssi_32_ww_armv7-user && make sys_images`
+	- `export OUT_DIR=out && lunch vnd_X5-user && make vnd_images krn_images`
+	- Finnaly, we merge all files/folders into one, `out/target/product/X5/merged` will contain all required files for a firmware release.
 
 ```sh
 python out_sys/target/product/mssi_32_ww_armv7/images/split_build.py \
@@ -45,17 +44,27 @@ python out_sys/target/product/mssi_32_ww_armv7/images/split_build.py \
        --kernel-dir out/target/product/X5/images \
        --output-dir out/target/product/X5/merged
 ```
-* For full build:
-   - Execute: `lunch full_X5-user && make`
-   - When building process is done, `out/*/*/X5` will contain all required files for a firmware release.
 
-* You can use this commend to get a zipped firmware release files:
-    - Exexute:
+   * For full build: (make sure you are building on clean source)
+	- `OUT_DIR=out && lunch full_X5-user && make`
+	- When building process is done, `out/target/product/X5` will contain all required files for a firmware release.
+
+* You can use this command to get a zipped firmware release files:
+    - the follwing command is workaround for scatter having
+      wrong file names of flash files:
 
 ```bash
-zip -r9 ALPS_X5_Q_$([ -f dtbo.img ] && echo "DTBO_")$([ -f vbmeta.img ] && echo "VBMETA_")$([ -f super.img ] && echo "SUPER_")$(date +'%d%m%Y')_RELEASE.zip \
-       $([ -f vbmeta.img ] && echo $(ls *sign*) || echo $(ls *sign* | sed "s@-sign@@")) \
-       $([ -f vbmeta.img ] && echo vbmeta.img) \
+`[ -z $((ls *-sign.* 2>/dev/null) | head -1) ] && ( \
+        [ "$(grep -oc '\-sign.' MT*)" > 1 ] && (sed "s@-sign@@" -i MT*)) || ( \
+        [ "$(grep -oc '\-sign.' MT*)" = 0 ] && (sed -E '/X5/!s/(.img|.bin)/-sign\1/' -i MT*))`
+```
+
+   - for compressing we use:
+
+```bash
+ZIPNAME="ALPS_X5_Q_$([ -f dtbo.img ] && echo "DTBO_")$([ -f vbmeta.img ] && echo "VBMETA_")$([ -f super.img ] && echo "SUPER_")$([ -z "$(ls *-sign.* 2>/dev/null)" ] && echo "UNSIGNED_" || echo "SIGNED_")$(date +'%d%m%Y')_RELEASE.zip"
+zip -r9 $ZIPNAME \
+       $([ -n "$(ls *-sign.* 2>/dev/null)" ] && (echo $(ls *-sign.*)) || echo $(grep -E '(img|bin)' MT* | sed '/X5/d' | sed 's/.*file_name://')) \
        $([ -f super.img ] || echo product.img) \
        preloader_X5.bin MT*
 ```
