@@ -20,27 +20,12 @@ sleep 1.5
 	print "[TREE] [PATCH] Applying soong patch (one-time)"
 	patch -b -p1 -i $(dirname "$0")/patches/soong.patch
 
-	print "[TREE] [PATCH] Applying sign task patch (one-time)"
-	patch -b -p1 -i $(dirname "$0")/patches/sign_image.patch
-
 	print "[TREE] [GEN] Cloning project for X5 target"
-	perl vendor/mediatek/prop*/scripts/project_clone/project_clone.pl -p "$(pwd)" -o "mediateksample/k80hd_bsp_fwv_512m" -n "DOOGEE/X5"
+	perl vendor/mediatek/prop*/scripts/project_clone/project_clone.pl -p "$(pwd)" -o "mediateksample/k80_bsp" -n "DOOGEE/X5"
 }
 
 print "[TREE] [DEVICE] Overriding project files for X5 target"
 cp -r "$(dirname "$0")"/* .
-
-# currently, keep avb20 from lk/ def dtbo
-LK_RULES_MT6580="vendor/mediatek/proprietary/bootable/bootloader/lk/platform/mt6580/rules.mk"
-[ ! -f $LK_RULES_MT6580.bkp ] && {
-	print "[TREE] [LK] Enabling dtbo"
-	cp $LK_RULES_MT6580 $LK_RULES_MT6580.bkp
-	sed -e "s@MTK_AVB20_SUPPORT:=yes@MTK_AVB20_SUPPORT:=yes\nDEFINES += MTK_DTBO_FEATURE@" \
-	    -i $LK_RULES_MT6580
-}
-
-# disable image siging
-# # overidden in BoardConfig.mk
 
 # gen release keys and switch to release-keys
 [ ! -d device/DOOGEE/X5/security ] && {
@@ -58,11 +43,7 @@ LK_RULES_MT6580="vendor/mediatek/proprietary/bootable/bootloader/lk/platform/mt6
 	done
 
 	mkdir -p device/mediatek/security/X5
-	ln -s device/DOOGEE/X5/security/* device/mediatek/security/X5
-
-	pushd device/mediatek
-	grep -rlI --include=*.mk MAINLINE_SEPOLICY | xargs sed -i "s@MAINLINE_SEPOLICY_DEV_CERTIFICATES :=.*@MAINLINE_SEPOLICY_DEV_CERTIFICATES := device/DOOGEE/X5/security@"
-	popd
+	ln -s $(pwd)/device/DOOGEE/X5/security/* device/mediatek/security/X5/
 
 	sed "s@PRODUCT_VERITY_SIGNING_KEY :=.*@PRODUCT_VERITY_SIGNING_KEY := device/DOOGEE/X5/security/verity@" \
 		-i build/make/target/product/verity.mk
