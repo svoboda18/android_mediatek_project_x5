@@ -17,9 +17,9 @@
 */
 -->
 
-<!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds.  Do not translate. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Whether a software navigation bar should be shown.-->
+    <bool name="config_showNavigationBar">false</bool>
   <integer name="config_multiuserMaximumUsers">8</integer>
     <bool name="config_enableMultiUserUI">true</bool>
     <bool name="config_device_volte_available">false</bool>
@@ -33,7 +33,6 @@
     <bool name="config_useDevInputEventForAudioJack">true</bool>
     <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
     <bool name="skip_restoring_network_selection">true</bool>
-    <bool name="config_showNavigationBar">true</bool>
     <bool name="config_enableWifiDisplay">true</bool>
     <bool name="config_setColorTransformAccelerated">true</bool>
     <bool name="config_nightDisplayAvailable">true</bool>
@@ -70,4 +69,31 @@
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
     <integer name="config_doubleTapOnHomeBehavior">1</integer>
+    <!-- The default peak refresh rate for a given device. Change this value if you want to allow
+         for higher refresh rates to be automatically used out of the box -->
+    <integer name="config_defaultPeakRefreshRate">130</integer>
+        <!-- Defines the default set of global actions. Actions may still be disabled or hidden based
+         on the current state of the device.
+         Each item must be one of the following strings:
+         "power" = Power off
+         "settings" = An action to launch settings
+         "airplane" = Airplane mode toggle
+         "bugreport" = Take bug report, if available
+         "silent" = silent mode
+         "users" = list of users
+         "restart" = restart device
+         "emergency" = Launch emergency dialer
+         "lockdown" = Lock down device until the user authenticates
+         "logout" =  Logout the current user
+         -->
+    <string-array translatable="false" name="config_globalActionsList">
+        <item>power</item>
+        <item>restart</item>
+        <item>lockdown</item>
+        <item>logout</item>
+        <item>bugreport</item>
+	<item>screenshot</item>
+	<item>emergency</item>
+    </string-array>
+
 </resources>
