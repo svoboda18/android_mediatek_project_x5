@@ -23,8 +23,8 @@ vbmeta_vendor,Raw data,8192,,EMMC_USER,,N,Y,vbmeta_vendor.img,Y,N,Y,,Y,,AUTO
 expdb,Raw data,10240,,EMMC_USER,,N,N,NONE,N,N,N,,N,,AUTO
 recovery2,EXT4,16384,,EMMC_USER,,N,N,NONE,N,N,N,,N,,AUTO
 radio,EXT4,32768,,EMMC_USER,,N,N,NONE,N,N,N,,N,,AUTO
-vendor,EXT4,124288,,EMMC_USER,main,N,Y,vendor.img,Y,N,Y,,Y,,AUTO
-product,EXT4,282144,,EMMC_USER,main,N,Y,product.img,Y,N,Y,,Y,,AUTO
+vendor,EXT4,156288,,EMMC_USER,main,N,Y,vendor.img,Y,N,Y,,Y,,AUTO
+product,EXT4,432144,,EMMC_USER,main,N,Y,product.img,Y,N,Y,,Y,,AUTO
 odm,EXT4,32768,,EMMC_USER,main,N,Y,odm.img,Y,N,Y,,Y,,AUTO
 oem,EXT4,65536,,EMMC_USER,main,N,N,NONE,N,N,N,,N,,AUTO
 frp,Raw data,1024,,EMMC_USER,,N,N,NONE,N,N,N,,N,,AUTO
@@ -36,8 +36,8 @@ metadata,Raw data,32768,,EMMC_USER,,N,N,NONE,N,N,N,,N,,AUTO
 oemkeystore,Raw data,2048,,EMMC_USER,,N,N,NONE,N,N,N,,N,,AUTO
 secro,Raw data,6144,,EMMC_USER,,N,Y,secro.img,N,N,N,,N,,AUTO
 keystore,Raw data,8192,,EMMC_USER,,N,N,NONE,N,N,Y,,Y,,AUTO
-system,EXT4,802864,,EMMC_USER,main,N,Y,system.img,Y,N,Y,,Y,,AUTO
-super,Raw data,1209296,,EMMC_USER,,N,Y,super.img,Y,N,Y,,Y,,AUTO
+system,EXT4,952864,,EMMC_USER,main,N,Y,system.img,Y,N,Y,,Y,,AUTO
+super,Raw data,1539296,,EMMC_USER,,N,Y,super.img,Y,N,Y,,Y,,AUTO
 cache,EXT4,52144,,EMMC_USER,,N,Y,cache.img,N,N,Y,,Y,,AUTO
 userdata,EXT4,1672864,,EMMC_USER,,N,Y,userdata.img,N,N,Y,,Y,,AUTO
 intsd,FAT,0,,EMMC_USER,,N,N,NONE,N,N,N,,N,,AUTO
