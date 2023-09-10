@@ -13,20 +13,23 @@ ifeq (yes,$(strip $(SVB_ENABLE_AGO)))
         else
            $(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
         endif
-        PRODUCT_PROPERTY_OVERRIDES += ro.vendor.gmo.ram_optimize=1
-
-        DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_rom
-        DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_ram
-
-        # Force android.hardware.cas@1.1 to be lazy for AGO project
-        PRODUCT_PACKAGES += android.hardware.cas@1.1-service-lazy
     endif
+
+    PRODUCT_PROPERTY_OVERRIDES += ro.vendor.gmo.ram_optimize=1
+
+    DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_rom
+    DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_ram
+
+    # Force android.hardware.cas@1.1 to be lazy for AGO project
+    PRODUCT_PACKAGES += android.hardware.cas@1.1-service-lazy
 
     # Add MtkLauncher3 to replace Launcher3 when vendor code is available
     ifneq ($(wildcard vendor/mediatek/proprietary/packages/apps/Launcher3/Android.mk),)
-        PRODUCT_PACKAGES += MtkLauncher3GoIconRecents
-    else
-        PRODUCT_PACKAGES += Launcher3GoIconRecents
+        PRODUCT_PACKAGES += MtkLauncher3QuickStep
+    endif
+    # QuickSearchBox AOSP code will be replaced by MTK subject to availablity.
+    ifneq ($(wildcard vendor/mediatek/proprietary/packages/apps/QuickSearchBox/Android.mk),)
+        PRODUCT_PACKAGES += MtkQuickSearchBox
     endif
 
     # Filesystem management tools
@@ -36,6 +39,7 @@ ifeq (yes,$(strip $(SVB_ENABLE_AGO)))
     PRODUCT_PROPERTY_OVERRIDES += \
         ro.lmk.use_minfree_levels=false \
         ro.lmk.upgrade_pressure=0
+    PRODUCT_COPY_FILES += device/mediatek/vendor/common/fstab.enableswap_ago:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.enableswap:mtk
 
     # For the new devices shipped we would use go_handheld_core_hardware.xml and
     # previously launched devices should continue using handheld_core_hardware.xml
@@ -43,7 +47,7 @@ ifeq (yes,$(strip $(SVB_ENABLE_AGO)))
     ifeq (0x20000000,$(strip $(CUSTOM_CONFIG_MAX_DRAM_SIZE)))
          $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults_512.mk)
          PRODUCT_COPY_FILES += device/mediatek/vendor/common/ago/init/init.ago_512.rc:$(MTK_TARGET_VENDOR_RC)/init.ago.rc
- PRODUCT_PROPERTY_OVERRIDES += ro.lmk.thrashing_min_score_adj=300
+         PRODUCT_PROPERTY_OVERRIDES += ro.lmk.thrashing_min_score_adj=300
          PRODUCT_PROPERTY_OVERRIDES += \
             ro.zram.mark_idle_delay_mins=2 \
             ro.zram.first_wb_delay_mins=5 \
