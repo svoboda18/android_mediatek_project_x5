@@ -65,6 +65,14 @@ PRODUCT_COPY_FILES += $(BANIMATION)/bootanimation.zip:system/media/bootanimation
 
 $(call inherit-product, device/mediatek/mt6580/device.mk)
 
+# override HIDLs
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-service-lazy \
+    android.hardware.drm@1.2-service-lazy.clearkey \
+    android.hardware.drm@1.2-service-lazy.widevine \
+    android.hardware.light@2.0-service-mediatek-lazy \
+    vendor.mediatek.hardware.nvram@1.1-service-lazy
+
 $(call inherit-product-if-exists, vendor/mediatek/libs/$(MTK_TARGET_PROJECT)/device-vendor.mk)
 
 ifeq ($(strip $(BUILD_GMS)), yes)
