@@ -36,7 +36,7 @@
  */
 
 
-STATIC_METADATA2_BEGIN(DEVICE, SENSOR, SENSOR_DRVNAME_S5K5E2YA_MIPI_RAW)
+STATIC_METADATA_BEGIN(DEVICE, SENSOR, SENSOR_DRVNAME_S5K5E2YA_MIPI_RAW)
 //------------------------------------------------------------------------------
 //  android.sensor
 //------------------------------------------------------------------------------

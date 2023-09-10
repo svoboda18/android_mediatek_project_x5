@@ -36,13 +36,13 @@
  */
 
 
-STATIC_METADATA2_BEGIN(DEVICE, FLASHLIGHT, SENSOR_DRVNAME_S5K5E2YA_MIPI_RAW)
+STATIC_METADATA_BEGIN(DEVICE, FLASHLIGHT, SENSOR_DRVNAME_S5K5E2YA_MIPI_RAW)
 //------------------------------------------------------------------------------
 //  android.flash.info
 //------------------------------------------------------------------------------
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_FLASH_INFO_AVAILABLE)
-        CONFIG_ENTRY_VALUE(MTK_FLASH_INFO_AVAILABLE_FALSE, MUINT8)
+        CONFIG_ENTRY_VALUE(MTK_FLASH_INFO_AVAILABLE_TRUE, MUINT8)
     CONFIG_METADATA_END()
     //==========================================================================
     CONFIG_METADATA_BEGIN(MTK_FLASH_INFO_CHARGE_DURATION)

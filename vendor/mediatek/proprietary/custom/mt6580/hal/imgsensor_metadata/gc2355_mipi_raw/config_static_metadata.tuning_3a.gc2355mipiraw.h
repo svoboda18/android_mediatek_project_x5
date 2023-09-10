@@ -36,7 +36,7 @@
  */
 
 
-STATIC_METADATA2_BEGIN(DEVICE, TUNING_3A, SENSOR_DRVNAME_GC2355_MIPI_RAW)
+STATIC_METADATA_BEGIN(DEVICE, TUNING_3A, SENSOR_DRVNAME_GC2355_MIPI_RAW)
 //------------------------------------------------------------------------------
 //  android.control
 //------------------------------------------------------------------------------
