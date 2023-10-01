@@ -20,8 +20,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Whether a software navigation bar should be shown.-->
     <bool name="config_showNavigationBar">false</bool>
-    <integer name="config_multiuserMaximumUsers">8</integer>
-    <bool name="config_enableMultiUserUI">true</bool>
+    <integer name="config_multiuserMaximumUsers">1</integer>
+    <bool name="config_enableMultiUserUI">false</bool>
     <bool name="config_device_volte_available">false</bool>
     <bool name="config_device_vt_available">false</bool>
     <bool name="config_device_wfc_ims_available">false</bool>
