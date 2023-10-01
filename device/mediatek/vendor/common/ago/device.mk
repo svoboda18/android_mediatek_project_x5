@@ -14,7 +14,7 @@ ifeq (yes,$(strip $(SVB_ENABLE_AGO)))
            $(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
         endif
     endif
-
+    
     PRODUCT_PROPERTY_OVERRIDES += ro.vendor.gmo.ram_optimize=1
 
     DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/slim_rom
