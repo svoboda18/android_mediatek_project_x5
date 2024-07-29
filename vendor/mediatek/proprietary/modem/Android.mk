@@ -32,11 +32,12 @@ LOCAL_MODULE_SUFFIX := $(strip $(2))
 LOCAL_MODULE_CLASS := $(strip $(3))
 LOCAL_SRC_FILES_arm64 := $(strip $(4))$(strip $(1))$(strip $(2))
 LOCAL_SRC_FILES_arm   := $(strip $(5))$(strip $(1))$(strip $(2))
-LOCAL_INIT_RC := $(patsubst init_rc/%,init_rc/q0/%,$(6))
+LOCAL_INIT_RC := $(patsubst init_rc/%,init_rc/r0/%,$(6))
 LOCAL_MULTILIB := $(if $(filter EXECUTABLES,$(3)),$(if $(strip $(4)),first,32),$(if $(strip $(4)),both,32))
 LOCAL_SHARED_LIBRARIES := $(if $(filter 1,$(8)),$(strip $(7)))
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_OWNER := mtk
+LOCAL_CHECK_ELF_FILES := false
 include $$(BUILD_PREBUILT)
 endef
 
@@ -50,7 +51,7 @@ LOCAL_MODULE_OWNER := mtk
 include $$(BUILD_SYSTEM)/base_rules.mk
 $$(LOCAL_BUILT_MODULE): $(2)
 	mkdir -p $$(dir $$@)
-	tar -C $$(dir $$@) -zxf $(2) $(1)
+	PATH=prebuilts/build-tools/path/linux-x86 tar -C $$(dir $$@) -zmxf $(2) $(1)
 endef
 
 # $(1): output binary
@@ -270,7 +271,7 @@ endif#MTK_SINGLE_BIN_MODEM_SUPPORT
 endif#CUSTOM_MODEM
 
 ifneq ($(strip $(MTK_MODEM_MCF_OTA_FILES)),)
-MCF_OTA_LIST := $(filter %.mcfota %.mcfopota %.ini,$(shell tar -ztf $(MTK_MODEM_MCF_OTA_FILES)))
+MCF_OTA_LIST := $(filter %.mcfota %.mcfopota %.ini,$(shell PATH=prebuilts/build-tools/path/linux-x86 tar -zmtf $(MTK_MODEM_MCF_OTA_FILES)))
 $(foreach f,$(MCF_OTA_LIST),\
     $(eval $(call mtk-install-mdota,$(f),$(MTK_MODEM_MCF_OTA_FILES)))\
 )
@@ -290,13 +291,8 @@ $(info Use default MTK_MODEM_PARTITION_FILES for $(strip $(MTK_MODEM_PARTITION_F
 $(foreach item,$(MTK_MODEM_PARTITION_FILES),$(eval $(call mtk-install-modem,$(item),$(PRODUCT_OUT))))
 ALL_DEFAULT_INSTALLED_MODULES += $(MTK_MODEM_INSTALLED_MODULES)
 
-MTK_MODEM_REMOVED_MODULES := $(filter-out $(MTK_MODEM_INSTALLED_MODULES),$(wildcard $(PRODUCT_OUT)/md1dsp.img $(TARGET_OUT_VENDOR)/firmware/modem*.img $(TARGET_OUT_VENDOR)/firmware/dsp_*.bin $(TARGET_OUT)/firmware/catcher_filter_*.bin $(TARGET_OUT)/firmware/em_filter_*.bin $(TARGET_OUT_VENDOR)/firmware/armv7_*.bin $(TARGET_OUT_ETC)/mddb/*))
-ifneq ($(strip $(MTK_MODEM_MCF_OTA_FILES)),)
-MTK_MODEM_REMOVED_MODULES += $(filter-out $(addprefix $(TARGET_OUT_VENDOR_ETC)/mdota/,$(notdir $(MCF_OTA_LIST))),$(wildcard $(TARGET_OUT_VENDOR_ETC)/mdota/*))
-endif
-
 ifneq ($(MTK_BUILD_IGNORE_IMS_REPO),yes)
-$(foreach m,$(PRODUCTS.$(INTERNAL_PRODUCT).PRODUCT_PACKAGES),\
+$(foreach m,$(PRODUCT_PACKAGES),\
     $(if $(filter $(MTK_PATH_MODEM)/%,$(ALL_MODULES.$(m).PATH)),\
         $(eval MTK_MODEM_APPS_FILES += $(ALL_MODULES.$(m).INSTALLED))\
     )\
@@ -319,7 +315,3 @@ update-modem: $(MTK_MODEM_INSTALLED_MODULES) $(MTK_MODEM_APPS_FILES)
 
 clean-modem:
 
-  ifneq ($(strip $(MTK_MODEM_REMOVED_MODULES)),)
-$(info clean-modem: $(MTK_MODEM_REMOVED_MODULES))
-$(shell rm -rf $(MTK_MODEM_REMOVED_MODULES))
-  endif

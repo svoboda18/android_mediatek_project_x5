@@ -90,3 +90,6 @@ persist.wifi.rssi.thresholds=-85,-80,-73,-69
 
 # Zygote
 ro.zygote.preload.enable=0
+
+# Disable iorapd
+ro.iorapd.enable=false

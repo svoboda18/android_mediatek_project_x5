@@ -17,8 +17,8 @@ sleep 1.5
 }
 
 [ ! -f device/DOOGEE/X5/AndroidProducts.mk ] && {
-	print "[TREE] [PATCH] Applying soong patch (one-time)"
-	patch -b -p1 -i $(dirname "$0")/patches/soong.patch
+	#print "[TREE] [PATCH] Applying soong patch (one-time)"
+	#patch -b -p1 -i $(dirname "$0")/patches/soong.patch
 
 	print "[TREE] [GEN] Cloning project for X5 target"
 	perl vendor/mediatek/prop*/scripts/project_clone/project_clone.pl -p "$(pwd)" -o "mediateksample/k80_bsp" -n "DOOGEE/X5"
@@ -28,7 +28,7 @@ print "[TREE] [DEVICE] Overriding project files for X5 target"
 cp -r "$(dirname "$0")"/* .
 
 # gen release keys and switch to release-keys
-[ ! -d device/DOOGEE/X5/security ] && {
+false && [ ! -d device/DOOGEE/X5/security ] && {
     print "[TREE] [DEVICE] Generating release-keys..."
 	mkdir device/DOOGEE/X5/security
 	CERTS="releasekey platform shared media networkstack testkey verity verity_key"

@@ -8,7 +8,6 @@ MTK_PROJECT_FOLDER := $(MTK_TARGET_PROJECT_FOLDER)
 include $(MTK_TARGET_PROJECT_FOLDER)/ProjectConfig.mk
 include $(wildcard $(MTK_TARGET_PROJECT_FOLDER)/RuntimeSwitchConfig.mk)
 $(call inherit-product, $(MTK_TARGET_PROJECT_FOLDER)/device.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/runtime_libart.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote32
@@ -25,8 +24,15 @@ PRODUCT_MODEL := X5
 PRODUCT_POLICY := android.policy_phone
 PRODUCT_BRAND := DOOGEE
 
+ifeq ($(TARGET_BUILD_VARIANT), eng)
+KERNEL_DEFCONFIG ?= X5_debug_defconfig
+endif
+ifeq ($(TARGET_BUILD_VARIANT), user)
 KERNEL_DEFCONFIG ?= X5_defconfig
-
+endif
+ifeq ($(TARGET_BUILD_VARIANT), userdebug)
+KERNEL_DEFCONFIG ?= X5_defconfig userdebug.config
+endif
 PRELOADER_TARGET_PRODUCT ?= X5
 LK_PROJECT ?= X5
 TRUSTY_PROJECT ?= X5
