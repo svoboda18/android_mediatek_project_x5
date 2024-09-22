@@ -270,7 +270,7 @@ PLATFORM = MT6580
 
 CHIP_VER = S00
 
-BOARD_VER = BIRD_Q0MP1_K80_BSP_BB
+BOARD_VER = DOOGEE_X5_R0MP1_BB
 
 
 
@@ -280,7 +280,7 @@ BOARD_VER = BIRD_Q0MP1_K80_BSP_BB
 CUSTOM_OPTION +=
 
 # internal configuration
-PROJECT_MAKEFILE_EXT = BIRD_Q0MP1_K80_BSP_HSPA_EXT
+PROJECT_MAKEFILE_EXT = DOOGEE_X5_R0MP1_HSPA_EXT
 #
 #  Copyright Statement:
 #  ---------------------------
@@ -363,7 +363,7 @@ MIPI_SUPPORT = FALSE
 # =========================================================================
 # Feature Options which customer can NOT modify
 # =========================================================================
-HW_VER = BIRD_Q0MP1_K80_BSP_HSPA_HW
+HW_VER = DOOGEE_X5_R0MP1_HSPA_HW
 
 MTK_BT_CHIP = MTK_CONSYS_MT6580
   # Description:
@@ -569,7 +569,7 @@ HSUPA_CAPABILITY_NOT_SUPPORT = FALSE
 
 HW_PFC_SUPPORT = FALSE
 
-HW_VER = BIRD_Q0MP1_K80_BSP_HSPA_HW
+HW_VER = DOOGEE_X5_R0MP1_HSPA_HW
 
 IC_TEST_TYPE = NONE
 
@@ -665,7 +665,7 @@ OPTR_SPEC_MODEM = NONE
 
 ORIGINAL_FLAVOR = DEFAULT
 
-ORIGINAL_PROJECT_NAME = BIRD_Q0MP1_K80_BSP_HSPA
+ORIGINAL_PROJECT_NAME = DOOGEE_X5_R0MP1_HSPA
 
 PACKAGE_SEG = NONE
 

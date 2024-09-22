@@ -36,7 +36,7 @@
  */
 
 
-STATIC_METADATA_BEGIN(DEVICE, FEATURE, SENSOR_DRVNAME_GC2355_MIPI_RAW)
+STATIC_METADATA2_BEGIN(DEVICE, FEATURE, SENSOR_DRVNAME_GC2355_MIPI_RAW)
 //------------------------------------------------------------------------------
 //  android.control
 //------------------------------------------------------------------------------
@@ -60,6 +60,36 @@ STATIC_METADATA_BEGIN(DEVICE, FEATURE, SENSOR_DRVNAME_GC2355_MIPI_RAW)
         CONFIG_ENTRY_VALUE(15,  MINT32)
     CONFIG_METADATA_END()
     //==========================================================================
+//------------------------------------------------------------------------------
+//  vendor cshot
+//------------------------------------------------------------------------------
+    //==========================================================================
+    CONFIG_METADATA_BEGIN(MTK_CSHOT_FEATURE_AVAILABLE_MODES)
+        CONFIG_ENTRY_VALUE(MTK_CSHOT_FEATURE_AVAILABLE_MODE_OFF, MINT32)
+        CONFIG_ENTRY_VALUE(MTK_CSHOT_FEATURE_AVAILABLE_MODE_ON, MINT32)
+    CONFIG_METADATA_END()
+    //==========================================================================
+
+//------------------------------------------------------------------------------
+//  vendor p2done callback
+//------------------------------------------------------------------------------
+    //==========================================================================
+    CONFIG_METADATA_BEGIN(MTK_CONTROL_CAPTURE_EARLY_NOTIFICATION_SUPPORT)
+        CONFIG_ENTRY_VALUE(MTK_CONTROL_CAPTURE_EARLY_NOTIFICATION_SUPPORT_OFF, MINT32)
+        CONFIG_ENTRY_VALUE(MTK_CONTROL_CAPTURE_EARLY_NOTIFICATION_SUPPORT_ON, MINT32)
+    CONFIG_METADATA_END()
+    //==========================================================================
+
+//------------------------------------------------------------------------------
+//  postview
+//------------------------------------------------------------------------------
+    //==========================================================================
+    CONFIG_METADATA_BEGIN(MTK_CONTROL_CAPTURE_AVAILABLE_POSTVIEW_MODES)
+        CONFIG_ENTRY_VALUE(MTK_CONTROL_CAPTURE_POSTVIEW_MODE_OFF, MINT32)
+        CONFIG_ENTRY_VALUE(MTK_CONTROL_CAPTURE_POSTVIEW_MODE_ON, MINT32)
+    CONFIG_METADATA_END()
+    //==========================================================================
+
 //------------------------------------------------------------------------------
 STATIC_METADATA_END()
 
